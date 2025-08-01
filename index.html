@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uniten - Education Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+      .animate-float { animation: float 6s ease-in-out infinite; }
+      .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #f1f1f1; }
+      ::-webkit-scrollbar-thumb { background: #ff5a73; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #e04a63; }
+      
+      /* Grade tab active state */
+      .grade-tab.active { background: #3b82f6; color: white; }
+    </style>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Navbar -->
+    <header class="w-full px-4 sm:px-6 py-4 flex items-center justify-between bg-gray-900/90 backdrop-blur-sm fixed top-0 z-50 transition-all duration-300">
+      <div class="flex items-center space-x-2">
+        <div class="w-6 h-6 bg-blue-500 rounded-md"></div>
+        <h1 class="text-xl font-bold text-white">uniten</h1>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-6 text-sm text-white">
+        <div class="relative group">
+          <button class="flex items-center text-red-400 font-semibold hover:text-red-300 focus:outline-none transition-colors">
+            Our Courses <i class="fas fa-chevron-down ml-1 text-xs"></i>
+          </button>
+          <div class="absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300 invisible group-hover:visible">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors">Math</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors">Science</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors">Languages</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors">Arts</a>
+          </div>
+        </div>
+        
+        <a href="#" class="hover:text-red-400 transition-colors">Teachers</a>
+        <a href="#" class="hover:text-red-400 transition-colors">Programs</a>
+        <a href="#" class="hover:text-red-400 transition-colors">About</a>
+        <a href="#" class="hover:text-red-400 transition-colors">Pricing</a>
+        
+        <div class="flex items-center space-x-4 ml-4">
+          <a href="#" class="text-slate-400 hover:text-white transition-colors">Log in</a>
+          <a href="#" class="bg-[#ff5a73] hover:bg-[#e04a63] px-4 py-2 rounded-full font-semibold text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+            Try for free
+          </a>
+        </div>
+      </nav>
+      
+      <!-- Mobile Navigation -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="text-white p-2 focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-gray-900/95 z-40 pt-20 px-6 transform translate-x-full transition-transform duration-300">
+      <div class="flex flex-col space-y-6 text-white">
+        <div class="border-b border-gray-700 pb-4">
+          <button class="flex items-center justify-between w-full text-red-400 font-semibold py-2 focus:outline-none" onclick="toggleDropdown('courses-dropdown')">
+            Our Courses
+            <i class="fas fa-chevron-down ml-1 text-xs transition-transform" id="courses-arrow"></i>
+          </button>
+          <div id="courses-dropdown" class="hidden pl-4 mt-2 space-y-3">
+            <a href="#" class="block hover:text-red-400 transition-colors">Math</a>
+            <a href="#" class="block hover:text-red-400 transition-colors">Science</a>
+            <a href="#" class="block hover:text-red-400 transition-colors">Languages</a>
+            <a href="#" class="block hover:text-red-400 transition-colors">Arts</a>
+          </div>
+        </div>
+        
+        <a href="#" class="py-2 hover:text-red-400 border-b border-gray-700 transition-colors">Teachers</a>
+        <a href="#" class="py-2 hover:text-red-400 border-b border-gray-700 transition-colors">Programs</a>
+        <a href="#" class="py-2 hover:text-red-400 border-b border-gray-700 transition-colors">About</a>
+        <a href="#" class="py-2 hover:text-red-400 border-b border-gray-700 transition-colors">Pricing</a>
+        
+        <div class="flex flex-col space-y-4 pt-4">
+          <a href="#" class="text-center text-slate-400 hover:text-white py-2 transition-colors">Log in</a>
+          <a href="#" class="bg-[#ff5a73] text-center hover:bg-[#e04a63] px-4 py-3 rounded-full font-semibold text-white shadow-lg transition-colors">
+            Try for free
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-24 sm:pt-28 lg:pt-32 flex + flex-col md:flex-row items-center items-center justify-between px-6 sm:px-8 lg:px-16 py-12 md:py-16 lg:py-20 gap-8 md:gap-12 bg-white">
+      <!-- Text Content -->
+      <div class="w-full md:w-1/2 space-y-6 animate-fadeIn">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
+          We make your <br class="hidden sm:block" />
+          children's <span class="text-[#ff5a73]">future</span> better
+        </h1>
+        
+        <p class="text-gray-600 text-lg md:text-xl max-w-lg">
+          Simplistic approach, friendly mentors and fun learning can make your little one realize their potential.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 z-40">
+          <a href="#" class="inline-flex items-center justify-center bg-[#ff5a73] hover:bg-[#e04a63] px-6 py-3 rounded-full font-semibold text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#ff5a73] focus:ring-opacity-50">
+            Start your trial <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+          
+          <a href="#" class="inline-flex items-center justify-center border-2 border-gray-200 hover:border-[#ff5a73] px-6 py-3 rounded-full font-semibold text-gray-700 hover:text-[#ff5a73] shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50">
+            Learn more
+          </a>
+        </div>
+      </div>
+
+      <!-- Illustration -->
+      <div class="w-full md:w-1/2 flex justify-center animate-float">
+        <img src="image/Illustration.jpg" alt="Happy children learning together" class="w-full max-w-md rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Playful Learning Section -->
+<!-- Playful Learning Section -->
+<section class="bg-gray-50 py-20 px-4 md:px-10 lg:px-20">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+      They’ll Enjoy Playful Learning
+    </h2>
+    <p class="text-slate-500 max-w-xl mx-auto mt-4">
+      Our program promotes enjoyable learning across subjects,
+      helping children develop necessary skills
+    </p>
+  </div>
+
+  <!-- Icons Menu -->
+  <div class="flex justify-center flex-wrap gap-6 mb-16">
+    <!-- Item -->
+    <div class="flex flex-col items-center space-y-2">
+      <div class="bg-white shadow-md p-4 rounded-full">
+        <img src="https://img.icons8.com/color/48/book.png" alt="Reading" />
+      </div>
+      <span class="font-medium text-slate-700">Reading</span>
+    </div>
+    <div class="flex flex-col items-center space-y-2">
+      <div class="bg-white shadow-md p-4 rounded-full">
+        <img src="https://img.icons8.com/color/48/calculator.png" alt="Math" />
+      </div>
+      <span class="font-medium text-slate-700">Math</span>
+    </div>
+    <div class="flex flex-col items-center space-y-2">
+      <div class="bg-white shadow-md p-4 rounded-full">
+        <img src="https://img.icons8.com/color/48/brain.png" alt="Thinking" />
+      </div>
+      <span class="font-medium text-slate-700">Thinking Skills</span>
+    </div>
+    <div class="flex flex-col items-center space-y-2">
+      <div class="bg-white shadow-md p-4 rounded-full">
+        <img src="https://img.icons8.com/color/48/graduation-cap.png" alt="Social" />
+      </div>
+      <span class="font-medium text-slate-700">Social Learning</span>
+    </div>
+    <div class="flex flex-col items-center space-y-2">
+      <div class="bg-white shadow-md p-4 rounded-full">
+        <img src="https://img.icons8.com/color/48/idea.png" alt="Creativity" />
+      </div>
+      <span class="font-medium text-slate-700">Creativity</span>
+    </div>
+  </div>
+
+  <!-- Reading Card -->
+  <div
+    class="bg-white rounded-2xl shadow-xl px-6 py-10 md:flex items-center justify-between space-y-10 md:space-y-0 md:space-x-10"
+  >
+    <div class="md:w-1/2 space-y-4">
+      <h3 class="text-2xl font-bold text-slate-900">Reading</h3>
+      <p class="text-slate-600">
+        Personalized pathway that builds essential skills on one another—from letters and sounds
+        to sight words, to eventually reading.
+      </p>
+      <div class="flex items-start mt-4 space-x-3">
+        <img src="https://img.icons8.com/fluency/48/rocket.png" alt="Rocket" class="w-8 h-8" />
+        <p class="text-slate-700 font-semibold">
+          HOMER’s reading pathway is proven to increase early reading scores by 74%!
+        </p>
+      </div>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/201/201818.png"
+        alt="Illustration"
+        class="w-64 h-64 object-contain"
+      />
+    </div>
+  </div>
+</section>
+
+
+    <!-- Uniten Method Section -->
+    <section class="bg-gray-900 text-white px-6 md:px-20 py-20">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20">
+        <!-- Left Content -->
+        <div class="md:w-1/2 space-y-8">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
+              Powered by the <br />
+              <span class="text-[#ff5a73]">Uniten Method</span>
+            </h2>
+            <p class="text-gray-400 text-lg max-w-md">
+              Our research-based, four-step strategy, developed by professionals, goes beyond rote memorization.
+            </p>
+            <a href="#" class="text-blue-400 font-semibold inline-block mt-6 hover:underline flex items-center">
+              About Our Approach <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+
+          <!-- Steps -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8">
+            <!-- Step 1 -->
+            <div class="flex items-start space-x-4 group">
+              <div class="bg-blue-900/50 p-3 rounded-lg group-hover:bg-blue-900 transition-colors">
+                <i class="fas fa-star text-xl text-blue-400"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-blue-300">Introduce</h4>
+                <p class="text-gray-400 mt-1">
+                  Get kids excited to learn and support emerging schema development.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="flex items-start space-x-4 group">
+              <div class="bg-purple-900/50 p-3 rounded-lg group-hover:bg-purple-900 transition-colors">
+                <i class="fas fa-repeat text-xl text-purple-400"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-purple-300">Practice</h4>
+                <p class="text-gray-400 mt-1">
+                  Boost confidence and reinforce the skill with fun practice.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="flex items-start space-x-4 group">
+              <div class="bg-green-900/50 p-3 rounded-lg group-hover:bg-green-900 transition-colors">
+                <i class="fas fa-paint-brush text-xl text-green-400"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-green-300">Apply</h4>
+                <p class="text-gray-400 mt-1">
+                  Empower learners with opportunities to demonstrate understanding.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="flex items-start space-x-4 group">
+              <div class="bg-red-900/50 p-3 rounded-lg group-hover:bg-red-900 transition-colors">
+                <i class="fas fa-share-alt text-xl text-red-400"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-red-300">Transfer</h4>
+                <p class="text-gray-400 mt-1">
+                  Prepare kids to take their skills into the real world.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Illustration -->
+        <div class="md:w-1/2 flex justify-center">
+          <img src="image/metthod.png" alt="Student Illustration"  class="w-full max-w-md drop-shadow-md hover:drop-shadow-2xl transition-all duration-500 animate-float animate-bounce"
+          loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum Section -->
+   <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Our Curriculum Pathway</h1>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+        Our vast yet diverse curriculum helps students pursue what really interests them. Our mindfully crafted courses.
+      </p>
+    </div>
+
+    <!-- Grade Level Selector -->
+    <div class="flex flex-wrap justify-center gap-2 mb-12">
+      <button class="grade-tab active px-6 py-2 rounded-full font-medium bg-blue-600 text-white hover:bg-blue-700 transition-all" data-grade="pre-primary">Pre-Primary</button>
+      <button class="grade-tab px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all" data-grade="grade-1-2">Grade 1-2</button>
+      <button class="grade-tab px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all" data-grade="grade-3-5">Grade 3-5</button>
+      <button class="grade-tab px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all" data-grade="grade-6-8">Grade 6-8</button>
+    </div>
+
+    <!-- Curriculum Pathway -->
+    <div class="relative">
+      <!-- Pathway Line -->
+      <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-blue-200 transform -translate-x-1/2"></div>
+      
+      <!-- Pathway Cards -->
+      <div class="space-y-12 md:space-y-0">
+        <!-- Art Card -->
+        <div class="pathway-card group">
+          <div class="flex flex-col md:flex-row items-center md:items-start">
+            <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-1">
+              <div class="inline-block bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:border-purple-300 transition-all max-w-md">
+                <div class="flex items-center md:justify-end">
+                  <h3 class="text-xl font-bold text-gray-900 mr-3">Art</h3>
+                  <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-gray-600 mt-3 text-sm md:text-right">
+                  Fostering a spirit of creativity and imagination, the Art curriculum helps students express themselves...
+                </p>
+                <div class="mt-4 flex md:justify-end">
+                  <button class="text-purple-600 text-sm font-medium flex items-center hover:text-purple-800 transition-colors">
+                    Explore pathway
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="md:w-1/2 md:pl-12 order-2">
+              <!-- Connector dot for mobile -->
+              <div class="md:hidden flex justify-center mb-4">
+                <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-md">
+                <h4 class="font-semibold text-gray-800 mb-2">Learning Progression</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center">
+                    <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                    <span class="text-sm text-gray-600">Basic shapes & colors</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                    <span class="text-sm text-gray-600">Creative expression</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                    <span class="text-sm text-gray-600">Mixed media techniques</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Literacy Card (alternating side) -->
+        <div class="pathway-card group">
+          <div class="flex flex-col md:flex-row items-center md:items-start">
+            <div class="md:w-1/2 md:pl-12 order-2 md:order-1">
+              <!-- Connector dot for mobile -->
+              <div class="md:hidden flex justify-center mb-4">
+                <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:border-blue-300 transition-all max-w-md">
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900">Literacy</h3>
+                </div>
+                <p class="text-gray-600 mt-3 text-sm">
+                  Our literacy curriculum provides systematic approaches to make students fluent in English...
+                </p>
+                <div class="mt-4">
+                  <button class="text-blue-600 text-sm font-medium flex items-center hover:text-blue-800 transition-colors">
+                    Explore pathway
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-1 md:order-2">
+              <div class="inline-block bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-md">
+                <h4 class="font-semibold text-gray-800 mb-2">Learning Progression</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-end">
+                    <span class="text-sm text-gray-600">Phonics & basic reading</span>
+                    <div class="w-3 h-3 bg-blue-500 rounded-full ml-3"></div>
+                  </div>
+                  <div class="flex items-center justify-end">
+                    <span class="text-sm text-gray-600">Reading comprehension</span>
+                    <div class="w-3 h-3 bg-blue-500 rounded-full ml-3"></div>
+                  </div>
+                  <div class="flex items-center justify-end">
+                    <span class="text-sm text-gray-600">Creative writing</span>
+                    <div class="w-3 h-3 bg-blue-500 rounded-full ml-3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Numeracy Card -->
+        <div class="pathway-card group">
+          <div class="flex flex-col md:flex-row items-center md:items-start">
+            <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-1">
+              <div class="inline-block bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:border-green-300 transition-all max-w-md">
+                <div class="flex items-center md:justify-end">
+                  <h3 class="text-xl font-bold text-gray-900 mr-3">Numeracy</h3>
+                  <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-gray-600 mt-3 text-sm md:text-right">
+                  A systematic numeracy curriculum moving from concrete to abstract concepts...
+                </p>
+                <div class="mt-4 flex md:justify-end">
+                  <button class="text-green-600 text-sm font-medium flex items-center hover:text-green-800 transition-colors">
+                    Explore pathway
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="md:w-1/2 md:pl-12 order-2">
+              <!-- Connector dot for mobile -->
+              <div class="md:hidden flex justify-center mb-4">
+                <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-md">
+                <h4 class="font-semibold text-gray-800 mb-2">Learning Progression</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center">
+                    <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                    <span class="text-sm text-gray-600">Counting & basic operations</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                    <span class="text-sm text-gray-600">Problem solving</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                    <span class="text-sm text-gray-600">Abstract concepts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dance Card (alternating side) -->
+        <div class="pathway-card group">
+          <div class="flex flex-col md:flex-row items-center md:items-start">
+            <div class="md:w-1/2 md:pl-12 order-2 md:order-1">
+              <!-- Connector dot for mobile -->
+              <div class="md:hidden flex justify-center mb-4">
+                <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:border-red-300 transition-all max-w-md">
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                    <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900">Dance</h3>
+                </div>
+                <p class="text-gray-600 mt-3 text-sm">
+                  Boosts creativity, confidence and fitness through movement and expression...
+                </p>
+                <div class="mt-4">
+                  <button class="text-red-600 text-sm font-medium flex items-center hover:text-red-800 transition-colors">
+                    Explore pathway
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-1 md:order-2">
+              <div class="inline-block bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-md">
+                <h4 class="font-semibold text-gray-800 mb-2">Learning Progression</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-end">
+                    <span class="text-sm text-gray-600">Basic movement & rhythm</span>
+                    <div class="w-3 h-3 bg-red-500 rounded-full ml-3"></div>
+                  </div>
+                  <div class="flex items-center justify-end">
+                    <span class="text-sm text-gray-600">Coordination & expression</span>
+                    <div class="w-3 h-3 bg-red-500 rounded-full ml-3"></div>
+                  </div>
+                  <div class="flex items-center justify-end">
+                    <span class="text-sm text-gray-600">Choreography & performance</span>
+                    <div class="w-3 h-3 bg-red-500 rounded-full ml-3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div>
+          <div class="flex items-center space-x-2 mb-6">
+            <div class="w-6 h-6 bg-blue-500 rounded-md"></div>
+            <h2 class="text-xl font-bold">uniten</h2>
+          </div>
+          <p class="text-gray-400 mb-6">
+            Making quality education accessible and enjoyable for every child.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Courses</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Math</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Science</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Languages</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Arts</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Company</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Support</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="max-w-7xl mx-auto border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p>© 2023 Uniten. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('translate-x-full');
+      });
+      
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('translate-x-full');
+        });
+      });
+      
+      // Toggle dropdown for mobile
+      function toggleDropdown(id) {
+        const dropdown = document.getElementById(id);
+        const arrow = document.getElementById('courses-arrow');
+        dropdown.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+      }
+      
+      // Grade tabs functionality
+      const gradeTabs = document.querySelectorAll('.grade-tab');
+      gradeTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          gradeTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          // Here you would typically load content for the selected grade
+        });
+      });
+      
+      // GSAP animations
+      gsap.registerPlugin(ScrollTrigger);
+      
+      // Animate pathway cards on scroll
+      gsap.utils.toArray('.pathway-card').forEach(card => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          },
+          opacity: 0,
+          y: 50,
+          duration: 0.8,
+          ease: "power2.out"
+        });
+      });
+      
+      // Animate hero section elements
+      gsap.from(".animate-fadeIn", {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power2.out"
+      });
+    </script>
+  </body>
+</html>

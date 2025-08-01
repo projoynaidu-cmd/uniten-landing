@@ -1,0 +1,73 @@
+ 
+   body {
+        font-family: 'Inter', sans-serif;
+        background-color: #ffffff;
+        color: #252323;
+      }
+ /* Animation keyframes hero section */
+ @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+
+  /* header setion  */
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+  
+  /* Smooth transitions */
+  .transition-transform {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+ /* Animation for pathway cards */
+  .pathway-card {
+    transition: all 0.3s ease;
+  }
+  
+  .pathway-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .pathway-card {
+      position: relative;
+      padding-left: 2rem;
+    }
+    
+    .pathway-card::before {
+      content: '';
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: #bfdbfe;
+    }
+  }
+  
+  /* Active tab styling */
+  .grade-tab.active {
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3);
+  }
