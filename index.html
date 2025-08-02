@@ -29,7 +29,7 @@
       ::-webkit-scrollbar-thumb:hover { background: #e04a63; }
       
       /* Grade tab active state */
-      .grade-tab.active { background: #3b82f6; color: white; }
+      .grade-tab.active { background: #ff5a73; color: white; }
 
   /* Animation styles */
   .step-card {
@@ -442,7 +442,7 @@
 
     <!-- Grade Level Selector -->
     <div class="flex flex-wrap justify-center gap-2 mb-12">
-      <button class="grade-tab active px-6 py-2 rounded-full font-medium bg-blue-600 text-white hover:bg-blue-700 transition-all" data-grade="pre-primary">Pre-Primary</button>
+      <button class="grade-tab active px-6 py-2 rounded-full font-medium  bg-pink-600 text-white hover:bg-pink-700 transition-all" data-grade="pre-primary">Pre-Primary</button>
       <button class="grade-tab px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all" data-grade="grade-1-2">Grade 1-2</button>
       <button class="grade-tab px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all" data-grade="grade-3-5">Grade 3-5</button>
       <button class="grade-tab px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all" data-grade="grade-6-8">Grade 6-8</button>
@@ -733,7 +733,7 @@
     <!-- Header with animated gradient -->
     <div class="text-center mb-16">
       <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-black via-gray-600  ">
-        Voices of Our <span class="text-pink-600"> Community</span>
+        Voices of Our <span class="text-[#ff5a73]"> Community</span>
       </h1>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
         Real stories from families who found their perfect learning match
@@ -770,10 +770,7 @@
             <div class="story-block bg-white border border-gray-200 p-5 rounded-xl shadow-sm ">
               <p class="text-gray-700 font-medium">"Now he looks forward to 'going to school' every morning!"</p>
             </div>
-            <div class="story-block bg-white border border-gray-200 p-5 rounded-xl shadow-sm "> 
-              <p class="text-gray-700 font-medium">"I'm so grateful that I found a mentor who understood my child's learning style..."</p>
 
-            </div>
           </div>
           
           <!-- Reaction Bar -->
@@ -783,7 +780,7 @@
               <button class="reaction-btn bg-indigo-100 text-indigo-600 font-semibold px-4 py-2 rounded-full" data-emoji="👍">👍 12</button>
               <button class="reaction-btn bg-indigo-100 text-indigo-600 font-semibold px-4 py-2 rounded-full" data-emoji="🎉">🎉 8</button>
             </div>
-            <button class="text-indigo-600 font-medium flex items-center group">
+            <button class="text-[#ff5a73] hover:text-indigo-600 font-medium flex items-center group">
               Full story
               <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -1067,7 +1064,8 @@
 
     <!-- View All Button -->
     <div class="text-center mt-12">
-      <button class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all hover:scale-105">
+      <button class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#ff5a73] hover:text-[#ff5a73] hover:border-[#ff5a73] hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all hover:scale-105">
+
         Meet All Our Teachers
         <svg class="ml-3 -mr-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -1090,7 +1088,7 @@
     <!-- Pricing Toggle -->
     <div class="flex justify-center mb-10">
       <div class="inline-flex bg-white p-1 rounded-full shadow-sm border border-gray-200">
-        <button class="pricing-toggle active px-5 py-2 rounded-full font-medium text-white bg-blue-600 transition-all" data-plan="monthly">
+        <button class="pricing-toggle active px-5 py-2 rounded-full font-medium text-white bg-[#ff5a73] hover:bg-[#ff5a73] hover:text-gray-600 transition-all" data-plan="monthly">
           Monthly
         </button>
         <button class="pricing-toggle px-5 py-2 rounded-full font-medium text-gray-600 hover:text-gray-900 transition-all" data-plan="annual">
@@ -1134,57 +1132,7 @@
           POPULAR
         </div>
       </div>
-      <!-- Additional Monthly Plan -->
-<div class="pricing-card monthly group relative bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:border-blue-500 transition-all duration-300">
-  <div class="p-6">
-    <h3 class="text-2xl font-bold text-gray-900 mb-1">Monthly Basic</h3>
-    <div class="flex items-end mb-6">
-      <span class="text-4xl font-extrabold text-gray-900">$5</span>
-      <span class="text-lg text-gray-500 ml-1">/mo</span>
-    </div>
-    <ul class="space-y-3 mb-8">
-      <li class="flex items-start">
-        <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <span class="text-gray-600">Access to 1 course</span>
-      </li>
-      <li class="flex items-start">
-        <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <span class="text-gray-600">1 child profile</span>
-      </li>
-    </ul>
-    <button class="w-full px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700">Start</button>
-  </div>
-</div>
 
-<!-- Additional Monthly Plan -->
- <div class="pricing-card monthly group relative bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:border-blue-500 transition-all duration-300">
-  <div class="p-6">
-    <h3 class="text-2xl font-bold text-gray-900 mb-1">Monthly Pro</h3>
-    <div class="flex items-end mb-6">
-      <span class="text-4xl font-extrabold text-gray-900">$15</span>
-      <span class="text-lg text-gray-500 ml-1">/mo</span>
-    </div>
-    <ul class="space-y-3 mb-8">
-      <li class="flex items-start">
-        <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <span class="text-gray-600">Access to all courses</span>
-      </li>
-      <li class="flex items-start">
-        <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <span class="text-gray-600">2 child profiles</span>
-      </li>
-    </ul>
-    <button class="w-full px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700">Start</button>
-  </div>
-</div>
 
 
 
