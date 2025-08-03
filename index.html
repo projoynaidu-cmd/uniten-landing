@@ -10,17 +10,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+     <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+            sora: ['Sora', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="bg-gray-100 font-sans">
+  <body class="bg-gray-100 ">
     <!-- Navbar -->
     <header
-      class="w-full px-4 sm:px-6 py-4 flex items-center justify-between bg-gray-900/90 backdrop-blur-sm fixed top-0 z-50 transition-all duration-300">
+      class="w-full px-4 sm:px-6 py-4 flex items-center justify-between bg-gray-900/90 backdrop-blur-sm fixed top-0 z-50 transition-all duration-300 font-poppins font-normal">
       <div class="flex items-center space-x-2">
-        <div
-          class="w-8 h-8 bg-blue-500 rounded-md flex items-center justify-center text-white font-bold text-xs uppercase">
-          U
+        <div >
+          <img src="image/Group 86.png" alt="">
         </div>
         <h1 class="text-xl font-bold text-white ml-2 j capitalize">
           uniten
@@ -28,7 +39,7 @@
       </div>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-6 text-sm text-white">
+      <nav class="hidden md:flex items-center space-x-6 text-sm text-white font-poppins ">
         <div class="relative group">
           <button
             class="flex items-center text-red-400 font-semibold hover:text-red-300 focus:outline-none transition-colors">
@@ -67,7 +78,7 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu"
-      class="md:hidden fixed inset-0 bg-gray-900/95 z-40 pt-20 px-6 transform translate-x-full transition-transform duration-300">
+      class="font-poppins md:hidden fixed inset-0 bg-gray-900/95 z-40 pt-20 px-6 transform translate-x-full transition-transform duration-300">
       <div class="flex flex-col space-y-6 text-white">
         <div class="border-b border-gray-700 pb-4">
           <button class="flex items-center justify-between w-full text-red-400 font-semibold py-2 focus:outline-none"
@@ -103,17 +114,17 @@
       class="pt-24 sm:pt-28 lg:pt-32 flex + flex-col md:flex-row items-center items-center justify-between px-6 sm:px-8 lg:px-16 py-12 md:py-16 lg:py-20 gap-8 md:gap-12 bg-white">
       <!-- Text Content -->
       <div class="w-full md:w-1/2 space-y-6 animate-fadeIn">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-sora font-extrabold leading-tight text-[rgba(18, 22, 63, 1)]-900">
           We make your <br class="hidden sm:block" />
           children's <span class="text-[#ff5a73]">future</span> better
         </h1>
 
-        <p class="text-gray-600 text-lg md:text-xl max-w-lg">
+        <p class="text-gray-600 text-lg md:text-xl max-w-lg font-poppins">
           Simplistic approach, friendly mentors and fun learning can make your
           little one realize their potential.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 z-40">
+        <div class="flex flex-col sm:flex-row gap-4 z-40 font-sora">
           <a href="#"
             class="inline-flex items-center justify-center bg-[#ff5a73] hover:bg-[#e04a63] px-6 py-3 rounded-full font-semibold text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#ff5a73] focus:ring-opacity-50">
             Start your trial <i class="fas fa-arrow-right ml-2"></i>
@@ -137,23 +148,23 @@
     <!-- Playful Learning Section -->
     <section class="bg-gray-50 py-20 px-4 md:px-10 lg:px-20">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+        <h2 class="text-3xl md:text-4xl font-sora font-extrabold text-slate-900">
           They’ll Enjoy Playful Learning
         </h2>
-        <p class="text-slate-500 max-w-xl mx-auto mt-4">
+        <p class="text-slate-500 font-poppins max-w-xl mx-auto mt-4">
           Our program promotes enjoyable learning across subjects, helping
           children develop necessary skills
         </p>
       </div>
 
       <!-- Icons Menu -->
-      <div class="flex justify-center flex-wrap gap-6 mb-16">
+      <div class="flex justify-center flex-wrap gap-6 mb-16 font-sora">
         <!-- Item -->
         <div class="flex flex-col items-center space-y-2">
           <div class="bg-white shadow-md p-4 rounded-full">
             <img src="https://img.icons8.com/color/48/book.png" alt="Reading" />
           </div>
-          <span class="font-medium text-slate-700">Reading</span>
+          <span class="font-medium font-sora text-slate-700">Reading</span>
         </div>
         <div class="flex flex-col items-center space-y-2">
           <div class="bg-white shadow-md p-4 rounded-full">
@@ -177,7 +188,7 @@
           <div class="bg-white shadow-md p-4 rounded-full">
             <img src="https://img.icons8.com/color/48/idea.png" alt="Creativity" />
           </div>
-          <span class="font-medium text-slate-700">Creativity</span>
+          <span class="font-medium font-sora text-slate-700">Creativity</span>
         </div>
       </div>
 
@@ -185,22 +196,22 @@
       <div
         class="bg-white rounded-2xl shadow-xl px-6 py-10 md:flex items-center justify-between space-y-10 md:space-y-0 md:space-x-10">
         <div class="md:w-1/2 space-y-4">
-          <h3 class="text-2xl font-bold text-slate-900">Reading</h3>
-          <p class="text-slate-600">
+          <h3 class="text-2xl font-bold text-slate-900 font-sora">Reading</h3>
+          <p class="text-slate-600 font-poppins">
             Personalized pathway that builds essential skills on one
             another—from letters and sounds to sight words, to eventually
             reading.
           </p>
-          <div class="flex items-start mt-4 space-x-3">
-            <img src="https://img.icons8.com/fluency/48/rocket.png" alt="Rocket" class="w-8 h-8" />
-            <p class="text-slate-700 font-semibold">
+          <div class="flex items-center mt-6 space-x-3">
+            <img src="image/icon.jpg" alt="Rocket" class="w-25 h-25 object-contain shadow-2xs rounded-full" />
+            <p class="text-slate-700 font-semibold font-sora">
               HOMER’s reading pathway is proven to increase early reading scores
               by 74%!
             </p>
           </div>
         </div>
         <div class="md:w-1/2 flex justify-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png" alt="Illustration"
+          <img class="w-100 h-100 object-contain" src="image/Group 159.png" alt="Illustration "
             class="w-64 h-64 object-contain" />
         </div>
       </div>
@@ -212,15 +223,15 @@
         <!-- Left Content -->
         <div class="md:w-1/2 space-y-8">
           <div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
+            <h2 class="text-3xl font-sora md:text-4xl font-extrabold text-white mb-4">
               Powered by the <br />
               <span class="text-[#ff5a73]">Uniten Method</span>
             </h2>
-            <p class="text-gray-400 text-lg max-w-md">
+            <p class="text-gray-400 font-poppins text-lg max-w-md">
               Our research-based, four-step strategy, developed by
               professionals, goes beyond rote memorization.
             </p>
-            <a href="#" class="text-blue-400 font-semibold inline-block mt-6 hover:underline flex items-center">
+            <a href="#" class="text-blue-400 font-sora font-semibold inline-block mt-6 hover:underline flex items-center">
               About Our Approach <i class="fas fa-arrow-right ml-2"></i>
             </a>
           </div>
@@ -233,8 +244,8 @@
                 <i class="fas fa-star text-xl text-blue-400"></i>
               </div>
               <div>
-                <h4 class="font-bold text-blue-300">Introduce</h4>
-                <p class="text-gray-400 mt-1">
+                <h4 class="font-bold text-blue-300 font-sora">Introduce</h4>
+                <p class="text-gray-400 mt-1 font-poppins">
                   Get kids excited to learn and support emerging schema
                   development.
                 </p>
@@ -247,8 +258,8 @@
                 <i class="fas fa-repeat text-xl text-purple-400"></i>
               </div>
               <div>
-                <h4 class="font-bold text-purple-300">Practice</h4>
-                <p class="text-gray-400 mt-1">
+                <h4 class="font-bold text-purple-300 font-sora">Practice</h4>
+                <p class="text-gray-400 mt-1 font-poppins">
                   Boost confidence and reinforce the skill with fun practice.
                 </p>
               </div>
@@ -260,8 +271,8 @@
                 <i class="fas fa-paint-brush text-xl text-green-400"></i>
               </div>
               <div>
-                <h4 class="font-bold text-green-300">Apply</h4>
-                <p class="text-gray-400 mt-1">
+                <h4 class="font-bold text-green-300 font-sora">Apply</h4>
+                <p class="text-gray-400 mt-1 font-poppins">
                   Empower learners with opportunities to demonstrate
                   understanding.
                 </p>
@@ -274,8 +285,8 @@
                 <i class="fas fa-share-alt text-xl text-red-400"></i>
               </div>
               <div>
-                <h4 class="font-bold text-red-300">Transfer</h4>
-                <p class="text-gray-400 mt-1">
+                <h4 class="font-bold text-red-300 font-sora">Transfer</h4>
+                <p class="text-gray-400 mt-1 font-poppins">
                   Prepare kids to take their skills into the real world.
                 </p>
               </div>
@@ -293,14 +304,14 @@
     </section>
 
     <!-- Curriculum Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-[#faf6ef]">
       <div class="max-w-7xl mx-auto">
         <!-- Header -->
         <div class="text-center mb-12">
-          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-gray-900 mb-4">
             Our Curriculum <span class="text-[#ff5a73]">Pathway</span>
           </h1>
-          <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p class="text-lg md:text-xl text-gray-600 font-poppins max-w-3xl mx-auto">
             Our vast yet diverse curriculum helps students pursue what really
             interests them. Our mindfully crafted courses.
           </p>
@@ -582,12 +593,12 @@
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
       <div class="max-w-4xl mx-auto text-center">
         <!-- Header -->
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        <h1 class="text-3xl font-sora md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
           <span class="text-[#ff5a73]">Personalized</span> Made Easy
         </h1>
 
         <!-- Description -->
-        <p class="text-lg md:text-xl text-gray-700 mb-12 leading-relaxed max-w-3xl mx-auto">
+        <p class="text-lg md:text-xl text-gray-700 mb-12 leading-relaxed max-w-3xl mx-auto font-poppins">
           We combine your child's unique interests with their age and current
           learning level to create a personalized learning journey they love
           that builds essential skills for school and life!
@@ -1265,6 +1276,83 @@
         </div>
       </div>
     </section>
+
+    <!--  -->
+    <!-- Trusted Section -->
+<!-- Trusted By Section -->
+<section class="w-full">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
+    <!-- Left Column: Dark Info -->
+    <div class=" px-6 py-16 sm:px-10 lg:px-16 flex flex-col justify-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[#1e1c4f] mb-10">
+        Trusted by parents<br />worldwide
+      </h2>
+      <p class="text-lg text-slate-300 mb-10" >Specially designed for the modern young learner, ​ we combine our authentic teaching expertise with technology to deliver. </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+        <!-- 1 -->
+        <div>
+          <p class="text-lg font-bold text-[#fdb812]">50+ Classroom</p>
+          <p class="text-sm text-slate-300 mt-1">100+ Class everyday</p>
+        </div>
+        <!-- 2 -->
+        <div>
+          <p class="text-lg font-bold text-[#6f81ff]">3 Years</p>
+          <p class="text-sm text-slate-300 mt-1">experience</p>
+        </div>
+        <!-- 3 -->
+        <div>
+          <p class="text-lg font-bold text-[#fa5252]">300,0000+</p>
+          <p class="text-sm text-slate-300 mt-1">Learners</p>
+        </div>
+        <!-- 4 -->
+        <div>
+          <p class="text-lg font-bold text-[#2ec6d3]">80+</p>
+          <p class="text-sm text-slate-300 mt-1">Countries</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Logos Grid -->
+    <div class="grid grid-cols-2 divide-x divide-y divide-gray-100 text-center">
+      <!-- Fast Company -->
+      <div class="flex items-center justify-center h-40 bg-[#f8f5f0]">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Fast_Company_logo.svg/2560px-Fast_Company_logo.svg.png"
+          alt="Fast Company"
+          class="h-10 object-contain"
+        />
+      </div>
+      <!-- NHSA -->
+      <div class="flex items-center justify-center h-40 bg-[#ffffff]">
+        <img
+          src="https://www.nhsa.org/wp-content/themes/nhsa/images/logo-nhsa.svg"
+          alt="NHSA"
+          class="h-8 object-contain"
+        />
+      </div>
+      <!-- Forbes -->
+      <div class="flex items-center justify-center h-40 bg-[#ffffff]">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Forbes_logo.svg/2560px-Forbes_logo.svg.png"
+          alt="Forbes"
+          class="h-10 object-contain"
+        />
+      </div>
+      <!-- Super Simple -->
+      <div class="flex items-center justify-center h-40 bg-[#f8f5f0]">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Super_Simple_Songs_Logo.png/800px-Super_Simple_Songs_Logo.png"
+          alt="Super Simple"
+          class="h-12 object-contain"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
