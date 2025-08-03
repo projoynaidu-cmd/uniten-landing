@@ -1,158 +1,227 @@
+/* =========================== */
+/*        GLOBAL STYLES       */
+/* =========================== */
 
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap');
 
+/* Reset margin, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      /* body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #252323; } */
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-20px); }
-      }
-      .animate-float { animation: float 6s ease-in-out infinite; }
-      .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
-      @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-      
-      /* Custom scrollbar */
-      ::-webkit-scrollbar { width: 8px; }
-      ::-webkit-scrollbar-track { background: #f1f1f1; }
-      ::-webkit-scrollbar-thumb { background: #ff5a73; border-radius: 4px; }
-      ::-webkit-scrollbar-thumb:hover { background: #e04a63; }
-      
-      /* Grade tab active state */
-      .grade-tab.active { background: #ff5a73; color: white; }
-
-  /* Animation styles */
-  .step-card {
-    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-    flex: 1;
-    min-width: 200px;
-  }
-  
-  /* Connector lines between steps (desktop only) */
-  @media (min-width: 768px) {
-    .step-card:not(:last-child) {
-      position: relative;
-    }
-    
-    .step-card:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      right: -30px;
-      top: 50%;
-      width: 20px;
-      height: 2px;
-      background: linear-gradient(to right, #3B82F6, #8B5CF6);
-      transform: translateY(-50%);
-    }
-  }
-  
-  /* Responsive adjustments */ 
-  @media (max-width: 767px) {
-    .step-card {
-      max-width: 300px;
-      margin: 0 auto;
-    }
-  }
-  
-  /* SVG icon styling */
-  svg {
-    stroke-width: 1.5;
-  }
-  
+/* Custom scrollbar styling */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ff5a73; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #e04a63; }
 
 
-  /* Custom 3D perspective */
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  
-  .transform-style-preserve-3d {
-    transform-style: preserve-3d;
-  }
-  
-  /* Story blocks with animated borders */
-  .story-block {
-    transition: all 0.3s ease;
-  }
-  
-  .story-block:hover {
-    transform: translateX(5px);
-  }
-  
-  /* Reaction buttons */
-  .reaction-btn {
-    transition: all 0.2s ease;
-  }
-  
-  .reaction-btn:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Mobile swipe hint */
-  @media (max-width: 767px) {
-    .testimonial-card {
-      touch-action: pan-y;
-    }
-  }
-  
-  /* Animations */
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-  
-  .animate-bounce {
-    animation: bounce 0.5s;
-  }
+/* =========================== */
+/*        ANIMATIONS          */
+/* =========================== */
 
-  /* teacher section  */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
 
-   /* Custom animations */
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-  
-  .teacher-card:hover .teacher-bio {
-    opacity: 1 !important;
-  }
-  
-  /* Responsive image sizing */
-  .aspect-w-3 {
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Reusable animation classes */
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+.animate-bounce { animation: bounce 0.5s; }
+
+
+/* =========================== */
+/*      COMPONENT STYLES      */
+/* =========================== */
+
+/* Grade Tabs */
+.grade-tab.active {
+  background: #ff5a73;
+  color: white;
+}
+
+/* Step Cards */
+.step-card {
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Connector lines between steps on desktop */
+@media (min-width: 768px) {
+  .step-card:not(:last-child) {
     position: relative;
-    padding-bottom: 133.33%; /* 4:3 aspect ratio */
-  }
-  
-  .aspect-w-3 > * {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* Social icon hover effects */
-  .teacher-bio a:hover svg {
-    transform: scale(1.2);
-    transition: transform 0.2s ease;
   }
 
-  /* priceing style  /* Custom animations */
-  .pricing-card:hover {
-    transform: translateY(-5px) !important;
+  .step-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(to right, #3B82F6, #8B5CF6);
+    transform: translateY(-50%);
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 767px) {
-    .pricing-toggle {
-      padding: 0.5rem 1rem;
-      font-size: 0.875rem;
-    }
+}
+
+/* Responsive adjustment for step cards */
+@media (max-width: 767px) {
+  .step-card {
+    max-width: 300px;
+    margin: 0 auto;
   }
-  
-  /* Button hover effect */
-  button:hover {
-    transform: scale(1.02);
+}
+
+/* 3D Perspective Effects */
+.perspective-1000 { perspective: 1000px; }
+.transform-style-preserve-3d { transform-style: preserve-3d; }
+
+/* Story Block Hover */
+.story-block {
+  transition: all 0.3s ease;
+}
+.story-block:hover {
+  transform: translateX(5px);
+}
+
+/* Reaction Buttons */
+.reaction-btn {
+  transition: all 0.2s ease;
+}
+.reaction-btn:hover {
+  transform: scale(1.1);
+}
+
+/* SVG icon weight */
+svg {
+  stroke-width: 1.5;
+}
+
+/* Mobile swipe behavior for testimonials */
+@media (max-width: 767px) {
+  .testimonial-card {
+    touch-action: pan-y;
   }
-  
- 
+}
+
+/* =========================== */
+/*      TEACHER SECTION       */
+/* =========================== */
+
+.teacher-card:hover .teacher-bio {
+  opacity: 1 !important;
+}
+
+/* Social icon animation */
+.teacher-bio a:hover svg {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+/* Responsive aspect ratio helper */
+.aspect-w-3 {
+  position: relative;
+  padding-bottom: 133.33%;
+}
+.aspect-w-3 > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================== */
+/*         PRICING            */
+/* =========================== */
+
+.pricing-card:hover {
+  transform: translateY(-5px) !important;
+}
+
+/* Responsive pricing toggle adjustments */
+@media (max-width: 767px) {
+  .pricing-toggle {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Button hover effect */
+button:hover {
+  transform: scale(1.02);
+}
+
+
+/* =========================== */
+/*         TEAM CARDS         */
+/* =========================== */
+
+.team-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.team-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.card-content {
+  transform: translateZ(20px);
+}
+
+.social-icons {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover .social-icons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================== */
+/*     SHAPE DECORATIONS      */
+/* =========================== */
+
+.shape-1 {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.shape-2 {
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.shape-3 {
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+}
+
+.shape-4 {
+  clip-path: polygon(50% 0%, 100% 0, 100% 65%, 50% 100%, 0 65%, 0 0);
+}
+
+.wave-divider {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f9f9fb' fill-opacity='1' d='M0,160L48,181.3C96,203,192,245,288,229.3C384,213,480,139,576,128C672,117,768,171,864,186.7C960,203,1056,181,1152,160C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100px;
+}

@@ -1,56 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uniten - Education Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              poppins: ['Poppins', 'sans-serif'],
-              sora: ['Sora', 'sans-serif'],
-            }
-          }
-        }
+              poppins: ["Poppins", "sans-serif"],
+              sora: ["Sora", "sans-serif"],
+            },
+          },
+        },
       };
     </script>
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="bg-gray-100 ">
+  <body class="bg-gray-100">
     <!-- Navbar -->
     <header
-      class="w-full px-4 sm:px-6 py-4 flex items-center justify-between bg-gray-900/90 backdrop-blur-sm fixed top-0 z-50 transition-all duration-300 font-poppins font-normal">
+      class="w-full px-4 sm:px-6 py-4 flex items-center justify-between bg-gray-900/90 backdrop-blur-sm fixed top-0 z-50 transition-all duration-300 font-poppins font-normal"
+    >
       <div class="flex items-center space-x-2">
         <div>
-          <img src="image/Group 86.png" alt="">
+          <img src="image/Group 86.png" alt="" />
         </div>
-        <h1 class="text-xl font-bold text-white ml-2 j capitalize">
-          uniten
-        </h1>
+        <h1 class="text-xl font-bold text-white ml-2 j capitalize">uniten</h1>
       </div>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-6 text-sm text-white font-poppins ">
+      <nav
+        class="hidden md:flex items-center space-x-6 text-sm text-white font-poppins"
+      >
         <div class="relative group">
           <button
-            class="flex items-center text-red-400 font-semibold hover:text-red-300 focus:outline-none transition-colors">
+            class="flex items-center text-red-400 font-semibold hover:text-red-300 focus:outline-none transition-colors"
+          >
             Our Courses <i class="fas fa-chevron-down ml-1 text-xs"></i>
           </button>
           <div
-            class="absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300 invisible group-hover:visible">
-            <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors">Math</a>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors">Science</a>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors">Languages</a>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors">Arts</a>
+            class="absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300 invisible group-hover:visible"
+          >
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-gray-700 transition-colors"
+              >Math</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-gray-700 transition-colors"
+              >Science</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-gray-700 transition-colors"
+              >Languages</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-gray-700 transition-colors"
+              >Arts</a
+            >
           </div>
         </div>
 
@@ -60,9 +84,13 @@
         <a href="#" class="hover:text-red-400 transition-colors">Pricing</a>
 
         <div class="flex items-center space-x-4 ml-4">
-          <a href="#" class="text-slate-400 hover:text-white transition-colors">Log in</a>
-          <a href="#"
-            class="bg-[#ff5a73] hover:bg-[#e04a63] px-4 py-2 rounded-full font-semibold text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+          <a href="#" class="text-slate-400 hover:text-white transition-colors"
+            >Log in</a
+          >
+          <a
+            href="#"
+            class="bg-[#ff5a73] hover:bg-[#e04a63] px-4 py-2 rounded-full font-semibold text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+          >
             Try for free
           </a>
         </div>
@@ -70,39 +98,79 @@
 
       <!-- Mobile Navigation -->
       <div class="md:hidden flex items-center">
-        <button id="mobile-menu-button" class="text-white p-2 focus:outline-none">
+        <button
+          id="mobile-menu-button"
+          class="text-white p-2 focus:outline-none"
+        >
           <i class="fas fa-bars text-xl"></i>
         </button>
       </div>
     </header>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu"
-      class="font-poppins md:hidden fixed inset-0 bg-gray-900/95 z-40 pt-20 px-6 transform translate-x-full transition-transform duration-300">
+    <div
+      id="mobile-menu"
+      class="font-poppins md:hidden fixed inset-0 bg-gray-900/95 z-40 pt-20 px-6 transform translate-x-full transition-transform duration-300"
+    >
       <div class="flex flex-col space-y-6 text-white">
         <div class="border-b border-gray-700 pb-4">
-          <button class="flex items-center justify-between w-full text-red-400 font-semibold py-2 focus:outline-none"
-            onclick="toggleDropdown('courses-dropdown')">
+          <button
+            class="flex items-center justify-between w-full text-red-400 font-semibold py-2 focus:outline-none"
+            onclick="toggleDropdown('courses-dropdown')"
+          >
             Our Courses
-            <i class="fas fa-chevron-down ml-1 text-xs transition-transform" id="courses-arrow"></i>
+            <i
+              class="fas fa-chevron-down ml-1 text-xs transition-transform"
+              id="courses-arrow"
+            ></i>
           </button>
           <div id="courses-dropdown" class="hidden pl-4 mt-2 space-y-3">
-            <a href="#" class="block hover:text-red-400 transition-colors">Math</a>
-            <a href="#" class="block hover:text-red-400 transition-colors">Science</a>
-            <a href="#" class="block hover:text-red-400 transition-colors">Languages</a>
-            <a href="#" class="block hover:text-red-400 transition-colors">Arts</a>
+            <a href="#" class="block hover:text-red-400 transition-colors"
+              >Math</a
+            >
+            <a href="#" class="block hover:text-red-400 transition-colors"
+              >Science</a
+            >
+            <a href="#" class="block hover:text-red-400 transition-colors"
+              >Languages</a
+            >
+            <a href="#" class="block hover:text-red-400 transition-colors"
+              >Arts</a
+            >
           </div>
         </div>
 
-        <a href="#" class="py-2 hover:text-red-400 border-b border-gray-700 transition-colors">Teachers</a>
-        <a href="#" class="py-2 hover:text-red-400 border-b border-gray-700 transition-colors">Programs</a>
-        <a href="#" class="py-2 hover:text-red-400 border-b border-gray-700 transition-colors">About</a>
-        <a href="#" class="py-2 hover:text-red-400 border-b border-gray-700 transition-colors">Pricing</a>
+        <a
+          href="#"
+          class="py-2 hover:text-red-400 border-b border-gray-700 transition-colors"
+          >Teachers</a
+        >
+        <a
+          href="#"
+          class="py-2 hover:text-red-400 border-b border-gray-700 transition-colors"
+          >Programs</a
+        >
+        <a
+          href="#"
+          class="py-2 hover:text-red-400 border-b border-gray-700 transition-colors"
+          >About</a
+        >
+        <a
+          href="#"
+          class="py-2 hover:text-red-400 border-b border-gray-700 transition-colors"
+          >Pricing</a
+        >
 
         <div class="flex flex-col space-y-4 pt-4">
-          <a href="#" class="text-center text-slate-400 hover:text-white py-2 transition-colors">Log in</a>
-          <a href="#"
-            class="bg-[#ff5a73] text-center hover:bg-[#e04a63] px-4 py-3 rounded-full font-semibold text-white shadow-lg transition-colors">
+          <a
+            href="#"
+            class="text-center text-slate-400 hover:text-white py-2 transition-colors"
+            >Log in</a
+          >
+          <a
+            href="#"
+            class="bg-[#ff5a73] text-center hover:bg-[#e04a63] px-4 py-3 rounded-full font-semibold text-white shadow-lg transition-colors"
+          >
             Try for free
           </a>
         </div>
@@ -111,11 +179,13 @@
 
     <!-- Hero Section -->
     <section
-      class="pt-24 sm:pt-28 lg:pt-32 flex + flex-col md:flex-row items-center items-center justify-between px-6 sm:px-8 lg:px-16 py-12 md:py-16 lg:py-20 gap-8 md:gap-12 bg-white">
+      class="pt-24 sm:pt-28 lg:pt-32 flex + flex-col md:flex-row items-center items-center justify-between px-6 sm:px-8 lg:px-16 py-12 md:py-16 lg:py-20 gap-8 md:gap-12 bg-white"
+    >
       <!-- Text Content -->
       <div class="w-full md:w-1/2 space-y-6 animate-fadeIn">
         <h1
-          class="text-4xl sm:text-5xl md:text-6xl font-sora font-extrabold leading-tight text-[rgba(18, 22, 63, 1)]-900">
+          class="text-4xl sm:text-5xl md:text-6xl font-sora font-extrabold leading-tight text-[rgba(18, 22, 63, 1)]-900"
+        >
           We make your <br class="hidden sm:block" />
           children's <span class="text-[#ff5a73]">future</span> better
         </h1>
@@ -126,22 +196,32 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 z-40 font-sora">
-          <a href="#"
-            class="inline-flex items-center justify-center bg-[#ff5a73] hover:bg-[#e04a63] px-6 py-3 rounded-full font-semibold text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#ff5a73] focus:ring-opacity-50">
+          <a
+            href="#"
+            class="inline-flex items-center justify-center bg-[#ff5a73] hover:bg-[#e04a63] px-6 py-3 rounded-full font-semibold text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#ff5a73] focus:ring-opacity-50"
+          >
             Start your trial <i class="fas fa-arrow-right ml-2"></i>
           </a>
 
-          <a href="#"
-            class="inline-flex items-center justify-center border-2 border-gray-200 hover:border-[#ff5a73] px-6 py-3 rounded-full font-semibold text-gray-700 hover:text-[#ff5a73] shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50">
+          <a
+            href="#"
+            class="inline-flex items-center justify-center border-2 border-gray-200 hover:border-[#ff5a73] px-6 py-3 rounded-full font-semibold text-gray-700 hover:text-[#ff5a73] shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50"
+          >
             Learn more
           </a>
         </div>
       </div>
 
       <!-- Illustration -->
-      <div class="w-full md:w-1/2 flex justify-center items-center animate-float">
-        <img src="image/Illustration.jpg" alt="Happy children learning together"
-          class="w-full max-w-md rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500" loading="lazy" />
+      <div
+        class="w-full md:w-1/2 flex justify-center items-center animate-float"
+      >
+        <img
+          src="image/Illustration.jpg"
+          alt="Happy children learning together"
+          class="w-full max-w-md rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500"
+          loading="lazy"
+        />
       </div>
     </section>
 
@@ -149,7 +229,9 @@
     <!-- Playful Learning Section -->
     <section class="bg-gray-50 py-20 px-4 md:px-10 lg:px-20">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-sora font-extrabold text-slate-900">
+        <h2
+          class="text-3xl md:text-4xl font-sora font-extrabold text-slate-900"
+        >
           They’ll Enjoy Playful Learning
         </h2>
         <p class="text-slate-500 font-poppins max-w-xl mx-auto mt-4">
@@ -169,25 +251,37 @@
         </div>
         <div class="flex flex-col items-center space-y-2">
           <div class="bg-white shadow-md p-4 rounded-full">
-            <img src="https://img.icons8.com/color/48/calculator.png" alt="Math" />
+            <img
+              src="https://img.icons8.com/color/48/calculator.png"
+              alt="Math"
+            />
           </div>
           <span class="font-medium text-slate-700">Math</span>
         </div>
         <div class="flex flex-col items-center space-y-2">
           <div class="bg-white shadow-md p-4 rounded-full">
-            <img src="https://img.icons8.com/color/48/brain.png" alt="Thinking" />
+            <img
+              src="https://img.icons8.com/color/48/brain.png"
+              alt="Thinking"
+            />
           </div>
           <span class="font-medium text-slate-700">Thinking Skills</span>
         </div>
         <div class="flex flex-col items-center space-y-2">
           <div class="bg-white shadow-md p-4 rounded-full">
-            <img src="https://img.icons8.com/color/48/graduation-cap.png" alt="Social" />
+            <img
+              src="https://img.icons8.com/color/48/graduation-cap.png"
+              alt="Social"
+            />
           </div>
           <span class="font-medium text-slate-700">Social Learning</span>
         </div>
         <div class="flex flex-col items-center space-y-2">
           <div class="bg-white shadow-md p-4 rounded-full">
-            <img src="https://img.icons8.com/color/48/idea.png" alt="Creativity" />
+            <img
+              src="https://img.icons8.com/color/48/idea.png"
+              alt="Creativity"
+            />
           </div>
           <span class="font-medium font-sora text-slate-700">Creativity</span>
         </div>
@@ -195,7 +289,8 @@
 
       <!-- Reading Card -->
       <div
-        class="bg-white rounded-2xl shadow-xl px-6 py-10 md:flex items-center justify-between space-y-10 md:space-y-0 md:space-x-10">
+        class="bg-white rounded-2xl shadow-xl px-6 py-10 md:flex items-center justify-between space-y-10 md:space-y-0 md:space-x-10"
+      >
         <div class="md:w-1/2 space-y-4">
           <h3 class="text-2xl font-bold text-slate-900 font-sora">Reading</h3>
           <p class="text-slate-600 font-poppins">
@@ -204,7 +299,11 @@
             reading.
           </p>
           <div class="flex items-center mt-6 space-x-3">
-            <img src="image/icon.jpg" alt="Rocket" class="w-25 h-25 object-contain shadow-2xs rounded-full" />
+            <img
+              src="image/icon.jpg"
+              alt="Rocket"
+              class="w-25 h-25 object-contain shadow-2xs rounded-full"
+            />
             <p class="text-slate-700 font-semibold font-sora">
               HOMER’s reading pathway is proven to increase early reading scores
               by 74%!
@@ -212,19 +311,27 @@
           </div>
         </div>
         <div class="md:w-1/2 flex justify-center">
-          <img class="w-100 h-100 object-contain" src="image/Group 159.png" alt="Illustration "
-            class="w-64 h-64 object-contain" />
+          <img
+            class="w-100 h-100 object-contain"
+            src="image/Group 159.png"
+            alt="Illustration "
+            class="w-64 h-64 object-contain"
+          />
         </div>
       </div>
     </section>
 
     <!-- Uniten Method Section -->
     <section class="bg-gray-900 text-white px-6 md:px-20 py-20">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20"
+      >
         <!-- Left Content -->
         <div class="md:w-1/2 space-y-8">
           <div>
-            <h2 class="text-3xl font-sora md:text-4xl font-extrabold text-white mb-4">
+            <h2
+              class="text-3xl font-sora md:text-4xl font-extrabold text-white mb-4"
+            >
               Powered by the <br />
               <span class="text-[#ff5a73]">Uniten Method</span>
             </h2>
@@ -232,8 +339,10 @@
               Our research-based, four-step strategy, developed by
               professionals, goes beyond rote memorization.
             </p>
-            <a href="#"
-              class="text-blue-400 font-sora font-semibold inline-block mt-6 hover:underline flex items-center">
+            <a
+              href="#"
+              class="text-blue-400 font-sora font-semibold inline-block mt-6 hover:underline flex items-center"
+            >
               About Our Approach <i class="fas fa-arrow-right ml-2"></i>
             </a>
           </div>
@@ -242,7 +351,9 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8">
             <!-- Step 1 -->
             <div class="flex items-start space-x-4 group">
-              <div class="bg-blue-900/50 p-3 rounded-lg group-hover:bg-blue-900 transition-colors">
+              <div
+                class="bg-blue-900/50 p-3 rounded-lg group-hover:bg-blue-900 transition-colors"
+              >
                 <i class="fas fa-star text-xl text-blue-400"></i>
               </div>
               <div>
@@ -256,7 +367,9 @@
 
             <!-- Step 2 -->
             <div class="flex items-start space-x-4 group">
-              <div class="bg-purple-900/50 p-3 rounded-lg group-hover:bg-purple-900 transition-colors">
+              <div
+                class="bg-purple-900/50 p-3 rounded-lg group-hover:bg-purple-900 transition-colors"
+              >
                 <i class="fas fa-repeat text-xl text-purple-400"></i>
               </div>
               <div>
@@ -269,7 +382,9 @@
 
             <!-- Step 3 -->
             <div class="flex items-start space-x-4 group">
-              <div class="bg-green-900/50 p-3 rounded-lg group-hover:bg-green-900 transition-colors">
+              <div
+                class="bg-green-900/50 p-3 rounded-lg group-hover:bg-green-900 transition-colors"
+              >
                 <i class="fas fa-paint-brush text-xl text-green-400"></i>
               </div>
               <div>
@@ -283,7 +398,9 @@
 
             <!-- Step 4 -->
             <div class="flex items-start space-x-4 group">
-              <div class="bg-red-900/50 p-3 rounded-lg group-hover:bg-red-900 transition-colors">
+              <div
+                class="bg-red-900/50 p-3 rounded-lg group-hover:bg-red-900 transition-colors"
+              >
                 <i class="fas fa-share-alt text-xl text-red-400"></i>
               </div>
               <div>
@@ -298,9 +415,12 @@
 
         <!-- Right Illustration -->
         <div class="md:w-1/2 flex justify-center">
-          <img src="image/metthod.png" alt="Student Illustration"
+          <img
+            src="image/metthod.png"
+            alt="Student Illustration"
             class="w-full max-w-md drop-shadow-md hover:drop-shadow-2xl transition-all duration-500 animate-float"
-            loading="lazy" />
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
@@ -310,10 +430,14 @@
       <div class="max-w-7xl mx-auto">
         <!-- Header -->
         <div class="text-center mb-12">
-          <h1 class="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-gray-900 mb-4">
+          <h1
+            class="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-gray-900 mb-4"
+          >
             Our Curriculum <span class="text-[#ff5a73]">Pathway</span>
           </h1>
-          <p class="text-lg md:text-xl text-gray-600 font-poppins max-w-3xl mx-auto">
+          <p
+            class="text-lg md:text-xl text-gray-600 font-poppins max-w-3xl mx-auto"
+          >
             Our vast yet diverse curriculum helps students pursue what really
             interests them. Our mindfully crafted courses.
           </p>
@@ -323,22 +447,26 @@
         <div class="flex flex-wrap justify-center gap-2 font-sora mb-12">
           <button
             class="grade-tab active px-6 py-2 rounded-full font-medium bg-pink-600 text-white hover:bg-pink-700 transition-all"
-            data-grade="pre-primary">
+            data-grade="pre-primary"
+          >
             Pre-Primary
           </button>
           <button
             class="grade-tab px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all"
-            data-grade="grade-1-2">
+            data-grade="grade-1-2"
+          >
             Grade 1-2
           </button>
           <button
             class="grade-tab px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all"
-            data-grade="grade-3-5">
+            data-grade="grade-3-5"
+          >
             Grade 3-5
           </button>
           <button
             class="grade-tab px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all"
-            data-grade="grade-6-8">
+            data-grade="grade-6-8"
+          >
             Grade 6-8
           </button>
         </div>
@@ -346,36 +474,70 @@
         <!-- Curriculum Pathway -->
         <div class="relative">
           <!-- Pathway Line -->
-          <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-blue-200 transform -translate-x-1/2">
-          </div>
+          <div
+            class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-blue-200 transform -translate-x-1/2"
+          ></div>
 
           <!-- Pathway Cards -->
           <div class="space-y-12 md:space-y-0">
             <!-- Art Card -->
             <div class="pathway-card group">
-              <div class="flex flex-col md:flex-row items-center md:items-start">
-                <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-1">
+              <div
+                class="flex flex-col md:flex-row items-center md:items-start"
+              >
+                <div
+                  class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-1"
+                >
                   <div
-                    class="inline-block bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:border-purple-300 transition-all max-w-md">
+                    class="inline-block bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:border-purple-300 transition-all max-w-md"
+                  >
                     <div class="flex items-center md:justify-end">
-                      <h3 class="text-xl font-bold text-gray-900 mr-3 font-sora">Art</h3>
-                      <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                        <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                      <h3
+                        class="text-xl font-bold text-gray-900 mr-3 font-sora"
+                      >
+                        Art
+                      </h3>
+                      <div
+                        class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center"
+                      >
+                        <svg
+                          class="w-5 h-5 text-purple-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                          />
                         </svg>
                       </div>
                     </div>
-                    <p class="text-gray-600 mt-3 text-sm md:text-right font-poppins">
+                    <p
+                      class="text-gray-600 mt-3 text-sm md:text-right font-poppins"
+                    >
                       Fostering a spirit of creativity and imagination, the Art
                       curriculum helps students express themselves...
                     </p>
                     <div class="mt-4 flex md:justify-end">
                       <button
-                        class="text-purple-600 text-sm font-medium flex items-center hover:text-purple-800 transition-colors font-poppins">
+                        class="text-purple-600 text-sm font-medium flex items-center hover:text-purple-800 transition-colors font-poppins"
+                      >
                         Explore pathway
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        <svg
+                          class="w-4 h-4 ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                          />
                         </svg>
                       </button>
                     </div>
@@ -386,22 +548,36 @@
                   <div class="md:hidden flex justify-center mb-4">
                     <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
                   </div>
-                  <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-md">
+                  <div
+                    class="bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-md"
+                  >
                     <h4 class="font-semibold text-gray-800 mb-2 font-sora">
                       Learning Progression
                     </h4>
                     <div class="space-y-3 font-poppins">
                       <div class="flex items-center">
-                        <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                        <span class="text-sm text-gray-600">Basic shapes & colors</span>
+                        <div
+                          class="w-3 h-3 bg-purple-500 rounded-full mr-3"
+                        ></div>
+                        <span class="text-sm text-gray-600"
+                          >Basic shapes & colors</span
+                        >
                       </div>
                       <div class="flex items-center">
-                        <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                        <span class="text-sm text-gray-600">Creative expression</span>
+                        <div
+                          class="w-3 h-3 bg-purple-500 rounded-full mr-3"
+                        ></div>
+                        <span class="text-sm text-gray-600"
+                          >Creative expression</span
+                        >
                       </div>
                       <div class="flex items-center">
-                        <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                        <span class="text-sm text-gray-600">Mixed media techniques</span>
+                        <div
+                          class="w-3 h-3 bg-purple-500 rounded-full mr-3"
+                        ></div>
+                        <span class="text-sm text-gray-600"
+                          >Mixed media techniques</span
+                        >
                       </div>
                     </div>
                   </div>
@@ -411,22 +587,38 @@
 
             <!-- Literacy Card (alternating side) -->
             <div class="pathway-card group">
-              <div class="flex flex-col md:flex-row items-center md:items-start">
+              <div
+                class="flex flex-col md:flex-row items-center md:items-start"
+              >
                 <div class="md:w-1/2 md:pl-12 order-2 md:order-1">
                   <!-- Connector dot for mobile -->
                   <div class="md:hidden flex justify-center mb-4">
                     <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
                   </div>
                   <div
-                    class="bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:border-blue-300 transition-all max-w-md">
+                    class="bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:border-blue-300 transition-all max-w-md"
+                  >
                     <div class="flex items-center">
-                      <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      <div
+                        class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3"
+                      >
+                        <svg
+                          class="w-5 h-5 text-blue-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                          />
                         </svg>
                       </div>
-                      <h3 class="text-xl font-bold text-gray-900 font-sora">Literacy</h3>
+                      <h3 class="text-xl font-bold text-gray-900 font-sora">
+                        Literacy
+                      </h3>
                     </div>
                     <p class="text-gray-600 mt-3 text-sm font-poppins">
                       Our literacy curriculum provides systematic approaches to
@@ -434,32 +626,59 @@
                     </p>
                     <div class="mt-4">
                       <button
-                        class="text-blue-600 text-sm font-medium flex items-center hover:text-blue-800 transition-colors">
+                        class="text-blue-600 text-sm font-medium flex items-center hover:text-blue-800 transition-colors"
+                      >
                         Explore pathway
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        <svg
+                          class="w-4 h-4 ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                          />
                         </svg>
                       </button>
                     </div>
                   </div>
                 </div>
-                <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-1 md:order-2">
-                  <div class="inline-block bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-md">
+                <div
+                  class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-1 md:order-2"
+                >
+                  <div
+                    class="inline-block bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-md"
+                  >
                     <h4 class="font-semibold text-gray-800 mb-2 font-sora">
                       Learning Progression
                     </h4>
                     <div class="space-y-3 font-poppins">
                       <div class="flex items-center justify-end">
-                        <span class="text-sm text-gray-600">Phonics & basic reading</span>
-                        <div class="w-3 h-3 bg-blue-500 rounded-full ml-3"></div>
+                        <span class="text-sm text-gray-600"
+                          >Phonics & basic reading</span
+                        >
+                        <div
+                          class="w-3 h-3 bg-blue-500 rounded-full ml-3"
+                        ></div>
                       </div>
                       <div class="flex items-center justify-end">
-                        <span class="text-sm text-gray-600">Reading comprehension</span>
-                        <div class="w-3 h-3 bg-blue-500 rounded-full ml-3"></div>
+                        <span class="text-sm text-gray-600"
+                          >Reading comprehension</span
+                        >
+                        <div
+                          class="w-3 h-3 bg-blue-500 rounded-full ml-3"
+                        ></div>
                       </div>
                       <div class="flex items-center justify-end">
-                        <span class="text-sm text-gray-600">Creative writing</span>
-                        <div class="w-3 h-3 bg-blue-500 rounded-full ml-3"></div>
+                        <span class="text-sm text-gray-600"
+                          >Creative writing</span
+                        >
+                        <div
+                          class="w-3 h-3 bg-blue-500 rounded-full ml-3"
+                        ></div>
                       </div>
                     </div>
                   </div>
@@ -469,31 +688,62 @@
 
             <!-- Numeracy Card -->
             <div class="pathway-card group">
-              <div class="flex flex-col md:flex-row items-center md:items-start">
-                <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-1">
+              <div
+                class="flex flex-col md:flex-row items-center md:items-start"
+              >
+                <div
+                  class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-1"
+                >
                   <div
-                    class="inline-block bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:border-green-300 transition-all max-w-md">
+                    class="inline-block bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:border-green-300 transition-all max-w-md"
+                  >
                     <div class="flex items-center md:justify-end">
-                      <h3 class="text-xl font-sora font-bold text-gray-900 mr-3">
+                      <h3
+                        class="text-xl font-sora font-bold text-gray-900 mr-3"
+                      >
                         Numeracy
                       </h3>
-                      <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      <div
+                        class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center"
+                      >
+                        <svg
+                          class="w-5 h-5 text-green-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                          />
                         </svg>
                       </div>
                     </div>
-                    <p class="text-gray-600 font-poppins mt-3 text-sm md:text-right">
+                    <p
+                      class="text-gray-600 font-poppins mt-3 text-sm md:text-right"
+                    >
                       A systematic numeracy curriculum moving from concrete to
                       abstract concepts...
                     </p>
                     <div class="mt-4 flex md:justify-end">
                       <button
-                        class="text-green-600 text-sm font-medium flex items-center hover:text-green-800 transition-colors">
+                        class="text-green-600 text-sm font-medium flex items-center hover:text-green-800 transition-colors"
+                      >
                         Explore pathway
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        <svg
+                          class="w-4 h-4 ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                          />
                         </svg>
                       </button>
                     </div>
@@ -504,22 +754,36 @@
                   <div class="md:hidden flex justify-center mb-4">
                     <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
                   </div>
-                  <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-md">
+                  <div
+                    class="bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-md"
+                  >
                     <h4 class="font-semibold text-gray-800 mb-2">
                       Learning Progression
                     </h4>
                     <div class="space-y-3">
                       <div class="flex items-center">
-                        <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                        <span class="text-sm text-gray-600">Counting & basic operations</span>
+                        <div
+                          class="w-3 h-3 bg-green-500 rounded-full mr-3"
+                        ></div>
+                        <span class="text-sm text-gray-600"
+                          >Counting & basic operations</span
+                        >
                       </div>
                       <div class="flex items-center">
-                        <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                        <span class="text-sm text-gray-600">Problem solving</span>
+                        <div
+                          class="w-3 h-3 bg-green-500 rounded-full mr-3"
+                        ></div>
+                        <span class="text-sm text-gray-600"
+                          >Problem solving</span
+                        >
                       </div>
                       <div class="flex items-center">
-                        <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                        <span class="text-sm text-gray-600">Abstract concepts</span>
+                        <div
+                          class="w-3 h-3 bg-green-500 rounded-full mr-3"
+                        ></div>
+                        <span class="text-sm text-gray-600"
+                          >Abstract concepts</span
+                        >
                       </div>
                     </div>
                   </div>
@@ -529,21 +793,39 @@
 
             <!-- Dance Card (alternating side) -->
             <div class="pathway-card group">
-              <div class="flex flex-col md:flex-row items-center md:items-start">
+              <div
+                class="flex flex-col md:flex-row items-center md:items-start"
+              >
                 <div class="md:w-1/2 md:pl-12 order-2 md:order-1">
                   <!-- Connector dot for mobile -->
                   <div class="md:hidden flex justify-center mb-4">
                     <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
                   </div>
                   <div
-                    class="bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:border-red-300 transition-all max-w-md">
+                    class="bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:border-red-300 transition-all max-w-md"
+                  >
                     <div class="flex items-center">
-                      <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
-                        <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <div
+                        class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3"
+                      >
+                        <svg
+                          class="w-5 h-5 text-red-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                          />
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
                         </svg>
                       </div>
                       <h3 class="text-xl font-bold text-gray-900">Dance</h3>
@@ -554,31 +836,52 @@
                     </p>
                     <div class="mt-4">
                       <button
-                        class="text-red-600 text-sm font-medium flex items-center hover:text-red-800 transition-colors">
+                        class="text-red-600 text-sm font-medium flex items-center hover:text-red-800 transition-colors"
+                      >
                         Explore pathway
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        <svg
+                          class="w-4 h-4 ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                          />
                         </svg>
                       </button>
                     </div>
                   </div>
                 </div>
-                <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-1 md:order-2">
-                  <div class="inline-block bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-md">
+                <div
+                  class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-1 md:order-2"
+                >
+                  <div
+                    class="inline-block bg-white p-6 rounded-xl shadow-md border border-gray-200 max-w-md"
+                  >
                     <h4 class="font-semibold text-gray-800 mb-2">
                       Learning Progression
                     </h4>
                     <div class="space-y-3">
                       <div class="flex items-center justify-end">
-                        <span class="text-sm text-gray-600">Basic movement & rhythm</span>
+                        <span class="text-sm text-gray-600"
+                          >Basic movement & rhythm</span
+                        >
                         <div class="w-3 h-3 bg-red-500 rounded-full ml-3"></div>
                       </div>
                       <div class="flex items-center justify-end">
-                        <span class="text-sm text-gray-600">Coordination & expression</span>
+                        <span class="text-sm text-gray-600"
+                          >Coordination & expression</span
+                        >
                         <div class="w-3 h-3 bg-red-500 rounded-full ml-3"></div>
                       </div>
                       <div class="flex items-center justify-end">
-                        <span class="text-sm text-gray-600">Choreography & performance</span>
+                        <span class="text-sm text-gray-600"
+                          >Choreography & performance</span
+                        >
                         <div class="w-3 h-3 bg-red-500 rounded-full ml-3"></div>
                       </div>
                     </div>
@@ -592,30 +895,48 @@
     </section>
 
     <!--  Personalization -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50"
+    >
       <div class="max-w-4xl mx-auto text-center">
         <!-- Header -->
-        <h1 class="text-3xl font-sora md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        <h1
+          class="text-3xl font-sora md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+        >
           <span class="text-[#ff5a73]">Personalized</span> Made Easy
         </h1>
 
         <!-- Description -->
-        <p class="text-lg md:text-xl text-gray-700 mb-12 leading-relaxed max-w-3xl mx-auto font-poppins">
+        <p
+          class="text-lg md:text-xl text-gray-700 mb-12 leading-relaxed max-w-3xl mx-auto font-poppins"
+        >
           We combine your child's unique interests with their age and current
           learning level to create a personalized learning journey they love
           that builds essential skills for school and life!
         </p>
 
         <!-- Steps with SVG Icons -->
-        <div class="flex flex-col md:flex-row justify-center items-stretch gap-8 mb-12">
+        <div
+          class="flex flex-col md:flex-row justify-center items-stretch gap-8 mb-12"
+        >
           <!-- Step 1 -->
           <div
-            class="step-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all transform hover:-translate-y-1">
+            class="step-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all transform hover:-translate-y-1"
+          >
             <div class="w-20 h-20 mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                class="text-blue-600">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="text-blue-600"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
               </svg>
             </div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2 font-sora">
@@ -628,12 +949,22 @@
 
           <!-- Step 2 -->
           <div
-            class="step-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all transform hover:-translate-y-1">
+            class="step-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all transform hover:-translate-y-1"
+          >
             <div class="w-20 h-20 mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                class="text-purple-600">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="text-purple-600"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                />
               </svg>
             </div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2 font-sora">
@@ -646,12 +977,22 @@
 
           <!-- Step 3 -->
           <div
-            class="step-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all transform hover:-translate-y-1">
+            class="step-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all transform hover:-translate-y-1"
+          >
             <div class="w-20 h-20 mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                class="text-pink-600">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="text-pink-600"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
               </svg>
             </div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2 font-sora">
@@ -664,28 +1005,38 @@
         </div>
 
         <!-- CTA Button -->
-        <button   class="cta-button border border-[#ff5a73] text-[#ff5a73]
-         hover:border-[#ff3370] hover:text-[#ff3370]
-         font-semibold px-8 py-4 rounded-full 
-         transition-all duration-300 ease-in-out
-         hover:shadow-lg transform hover:scale-105
-         flex items-center mx-auto"
-> Start Your Free Trial
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="w-5 h-5 ml-2">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        <button
+          class="cta-button border border-[#ff5a73] text-[#ff5a73] hover:border-[#ff3370] hover:text-[#ff3370] font-semibold px-8 py-4 rounded-full transition-all duration-300 ease-in-out hover:shadow-lg transform hover:scale-105 flex items-center mx-auto"
+        >
+          Start Your Free Trial
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-5 h-5 ml-2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
           </svg>
         </button>
       </div>
     </section>
 
     <!-- testmonials section  -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-indigo-50 to-purple-50">
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-indigo-50 to-purple-50"
+    >
       <div class="max-w-7xl mx-auto">
         <!-- Header with animated gradient -->
         <div class="text-center mb-16">
           <h1
-            class="text-4xl md:text-5xl font-sora font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-black via-gray-600">
+            class="text-4xl md:text-5xl font-sora font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-black via-gray-600"
+          >
             Voices of Our <span class="text-[#ff5a73]"> Community</span>
           </h1>
           <p class="text-xl font-poppins text-gray-600 max-w-3xl mx-auto">
@@ -694,16 +1045,23 @@
         </div>
 
         <!-- 3D Card Stack -->
-        <div class="testimonial-stack relative h-[600px] md:h-[700px] perspective-1000">
+        <div
+          class="testimonial-stack relative h-[600px] md:h-[700px] perspective-1000"
+        >
           <!-- Testimonial Cards with Depth Effect -->
           <div
             class="testimonial-card absolute inset-0 w-full max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-8 transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] transform-style-preserve-3d"
-            data-index="0" style="transform: translateZ(0px); z-index: 3">
+            data-index="0"
+            style="transform: translateZ(0px); z-index: 3"
+          >
             <div class="flex flex-col h-full">
               <!-- Profile with Floating Avatar -->
-              <div class="flex items-center mb-8 -space-x-2 hover:-space-x-4 transition-all">
+              <div
+                class="flex items-center mb-8 -space-x-2 hover:-space-x-4 transition-all"
+              >
                 <div
-                  class="w-16 h-16 rounded-full bg-indigo-100 border-4 border-white shadow-lg flex items-center justify-center transition-transform hover:scale-110">
+                  class="w-16 h-16 rounded-full bg-indigo-100 border-4 border-white shadow-lg flex items-center justify-center transition-transform hover:scale-110"
+                >
                   <span class="text-2xl">👩‍👦</span>
                 </div>
                 <div class="pl-4">
@@ -717,7 +1075,8 @@
               <!-- Story Blocks -->
               <div class="flex-1 space-y-6">
                 <div
-                  class="story-block bg-indigo-50 p-5 rounded-xl relative before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-indigo-500 before:rounded-l">
+                  class="story-block bg-indigo-50 p-5 rounded-xl relative before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-indigo-500 before:rounded-l"
+                >
                   <p class="text-gray-700">
                     "When the pandemic closed schools, I was desperate to find
                     quality online education for Daniel..."
@@ -725,14 +1084,17 @@
                 </div>
 
                 <div
-                  class="story-block bg-purple-50 p-5 rounded-xl relative before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-purple-500 before:rounded-l">
+                  class="story-block bg-purple-50 p-5 rounded-xl relative before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-purple-500 before:rounded-l"
+                >
                   <p class="text-gray-700">
                     "The small class sizes (1-6 students) made all the
                     difference in his engagement..."
                   </p>
                 </div>
 
-                <div class="story-block bg-white border border-gray-200 p-5 rounded-xl shadow-sm">
+                <div
+                  class="story-block bg-white border border-gray-200 p-5 rounded-xl shadow-sm"
+                >
                   <p class="text-gray-700 font-medium">
                     "Now he looks forward to 'going to school' every morning!"
                   </p>
@@ -742,24 +1104,41 @@
               <!-- Reaction Bar -->
               <div class="mt-8 flex justify-between items-center">
                 <div class="flex space-x-4">
-                  <button class="reaction-btn bg-indigo-100 text-indigo-600 font-semibold px-4 py-2 rounded-full"
-                    data-emoji="❤️">
+                  <button
+                    class="reaction-btn bg-indigo-100 text-indigo-600 font-semibold px-4 py-2 rounded-full"
+                    data-emoji="❤️"
+                  >
                     ❤️ 24
                   </button>
-                  <button class="reaction-btn bg-indigo-100 text-indigo-600 font-semibold px-4 py-2 rounded-full"
-                    data-emoji="👍">
+                  <button
+                    class="reaction-btn bg-indigo-100 text-indigo-600 font-semibold px-4 py-2 rounded-full"
+                    data-emoji="👍"
+                  >
                     👍 12
                   </button>
-                  <button class="reaction-btn bg-indigo-100 text-indigo-600 font-semibold px-4 py-2 rounded-full"
-                    data-emoji="🎉">
+                  <button
+                    class="reaction-btn bg-indigo-100 text-indigo-600 font-semibold px-4 py-2 rounded-full"
+                    data-emoji="🎉"
+                  >
                     🎉 8
                   </button>
                 </div>
-                <button class="text-[#ff5a73] hover:text-indigo-600 font-medium flex items-center group">
+                <button
+                  class="text-[#ff5a73] hover:text-indigo-600 font-medium flex items-center group"
+                >
                   Full story
-                  <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  <svg
+                    class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </button>
               </div>
@@ -769,12 +1148,15 @@
           <!-- Additional testimonial cards would be positioned here with different transform values -->
           <div
             class="testimonial-card absolute inset-0 w-full max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-500 ease-in-out"
-            data-index="1" style="transform: translateZ(-30px); z-index: 2">
+            data-index="1"
+            style="transform: translateZ(-30px); z-index: 2"
+          >
             <div class="flex flex-col h-full">
               <!-- Profile -->
               <div class="flex items-center mb-8">
                 <div
-                  class="w-16 h-16 rounded-full bg-yellow-100 border-4 border-white shadow flex items-center justify-center">
+                  class="w-16 h-16 rounded-full bg-yellow-100 border-4 border-white shadow flex items-center justify-center"
+                >
                   <span class="text-2xl">👨‍🏫</span>
                 </div>
                 <div class="pl-4">
@@ -785,14 +1167,18 @@
 
               <!-- Testimonial content -->
               <div class="space-y-6">
-                <div class="bg-yellow-50 p-5 rounded-xl border-l-4 border-yellow-500">
+                <div
+                  class="bg-yellow-50 p-5 rounded-xl border-l-4 border-yellow-500"
+                >
                   <p class="text-gray-700">
                     "Mentoring kids online used to be a challenge, but with
                     Uniten's tools and small class sizes, I can truly connect
                     with each student."
                   </p>
                 </div>
-                <div class="bg-white border border-gray-200 p-5 rounded-xl shadow-sm">
+                <div
+                  class="bg-white border border-gray-200 p-5 rounded-xl shadow-sm"
+                >
                   <p class="text-gray-700 font-medium">
                     "The learning experience is as rewarding for me as it is for
                     them."
@@ -803,18 +1189,33 @@
               <!-- Reactions -->
               <div class="mt-8 flex justify-between items-center">
                 <div class="flex space-x-4">
-                  <button class="bg-yellow-100 text-yellow-600 font-semibold px-4 py-2 rounded-full">
+                  <button
+                    class="bg-yellow-100 text-yellow-600 font-semibold px-4 py-2 rounded-full"
+                  >
                     🙌 15
                   </button>
-                  <button class="bg-yellow-100 text-yellow-600 font-semibold px-4 py-2 rounded-full">
+                  <button
+                    class="bg-yellow-100 text-yellow-600 font-semibold px-4 py-2 rounded-full"
+                  >
                     💬 9
                   </button>
                 </div>
-                <button class="text-yellow-600 font-medium flex items-center group">
+                <button
+                  class="text-yellow-600 font-medium flex items-center group"
+                >
                   Full story
-                  <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  <svg
+                    class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </button>
               </div>
@@ -824,12 +1225,15 @@
           <!-- Additional testimonial cards would be positioned here with different transform values -->
           <div
             class="testimonial-card absolute inset-0 w-full max-w-2xl mx-auto bg-gradient-to-br from-purple-50 to-white rounded-2xl shadow-md p-8 transform transition-all duration-500 ease-in-out"
-            data-index="2" style="transform: translateZ(-60px); z-index: 1">
+            data-index="2"
+            style="transform: translateZ(-60px); z-index: 1"
+          >
             <div class="flex flex-col h-full">
               <!-- Profile -->
               <div class="flex items-center mb-8">
                 <div
-                  class="w-16 h-16 rounded-full bg-purple-100 border-4 border-white shadow flex items-center justify-center">
+                  class="w-16 h-16 rounded-full bg-purple-100 border-4 border-white shadow flex items-center justify-center"
+                >
                   <span class="text-2xl">🧒</span>
                 </div>
                 <div class="pl-4">
@@ -840,13 +1244,17 @@
 
               <!-- Content -->
               <div class="space-y-6">
-                <div class="bg-purple-50 p-5 rounded-xl border-l-4 border-purple-500">
+                <div
+                  class="bg-purple-50 p-5 rounded-xl border-l-4 border-purple-500"
+                >
                   <p class="text-gray-700">
                     "At first I was nervous about online classes, but now it's
                     my favorite part of the day!"
                   </p>
                 </div>
-                <div class="bg-white border border-gray-200 p-5 rounded-xl shadow-sm">
+                <div
+                  class="bg-white border border-gray-200 p-5 rounded-xl shadow-sm"
+                >
                   <p class="text-gray-700 font-medium">
                     "The lessons are fun, and my mentor makes everything easy to
                     understand."
@@ -857,18 +1265,33 @@
               <!-- Reactions -->
               <div class="mt-8 flex justify-between items-center">
                 <div class="flex space-x-4">
-                  <button class="bg-purple-100 text-purple-600 font-semibold px-4 py-2 rounded-full">
+                  <button
+                    class="bg-purple-100 text-purple-600 font-semibold px-4 py-2 rounded-full"
+                  >
                     🌟 32
                   </button>
-                  <button class="bg-purple-100 text-purple-600 font-semibold px-4 py-2 rounded-full">
+                  <button
+                    class="bg-purple-100 text-purple-600 font-semibold px-4 py-2 rounded-full"
+                  >
                     💡 10
                   </button>
                 </div>
-                <button class="text-purple-600 font-medium flex items-center group">
+                <button
+                  class="text-purple-600 font-medium flex items-center group"
+                >
                   Full story
-                  <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  <svg
+                    class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </button>
               </div>
@@ -879,9 +1302,18 @@
         <!-- Dynamic Progress Indicator -->
         <div class="mt-12 flex justify-center">
           <div class="flex items-center space-x-4">
-            <button class="nav-dot w-3 h-3 rounded-full bg-indigo-600" data-index="0"></button>
-            <button class="nav-dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
-            <button class="nav-dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
+            <button
+              class="nav-dot w-3 h-3 rounded-full bg-indigo-600"
+              data-index="0"
+            ></button>
+            <button
+              class="nav-dot w-3 h-3 rounded-full bg-gray-300"
+              data-index="1"
+            ></button>
+            <button
+              class="nav-dot w-3 h-3 rounded-full bg-gray-300"
+              data-index="2"
+            ></button>
             <div class="hidden md:block ml-4 text-sm text-gray-500">
               Swipe or use ← → arrows to explore
             </div>
@@ -890,12 +1322,14 @@
       </div>
     </section>
 
-    <!-- meet our teacher section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <!-- meet our teacher section if you use teachers section two please dont comment out  -->
+    <section class="hidden py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div class="max-w-7xl mx-auto">
         <!-- Section Header -->
         <div class="text-center mb-16">
-          <h1 class="text-4xl font-sora md:text-5xl font-bold text-gray-900 mb-4">
+          <h1
+            class="text-4xl font-sora md:text-5xl font-bold text-gray-900 mb-4"
+          >
             Meet Our Teachers
           </h1>
           <p class="text-xl font-poppins text-gray-600 max-w-3xl mx-auto">
@@ -908,47 +1342,77 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Teacher 1 -->
           <div
-            class="teacher-card group relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300">
-            <div class="aspect-w-3 aspect-h-4 bg-gray-100 overflow-hidden">
+            class="teacher-card group relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300"
+          >
+            <div class="aspect-w-3 aspect-h-4 bg-gray-800 overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
                 alt="Dr. Jody Levos"
-                class="object-cover w-[100%] h-full group-hover:scale-105 transition-transform duration-500" />
+                class="object-cover w-[100%] h-full group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
             <div class="p-6">
               <div
-                class="absolute -top-[-0.3rem] font-poppins right-4 bg-blue-600 text-white px-3 py-2 rounded-full text-sm font-medium shadow-md">
+                class="absolute -top-[-0.3rem] font-poppins right-4 bg-blue-600 text-white px-3 py-2 rounded-full text-sm font-medium shadow-md"
+              >
                 VP, Curriculum Design
               </div>
               <h3 class="text-2xl font-sora font-bold text-gray-900 mt-2">
                 Dr. Jody Levos
               </h3>
-              <p class="text-gray-600 font-poppins  mt-1">PhD in Child Development</p>
+              <p class="text-gray-600 font-poppins mt-1">
+                PhD in Child Development
+              </p>
 
               <!-- Hidden Bio -->
               <div
-                class="teacher-bio absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                class="teacher-bio absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
                 <p class="text-white font-poppins text-sm mb-4">
                   Former professor at Stanford with 15+ years experience in
                   early childhood education. Specializes in play-based learning.
                 </p>
                 <div class="flex space-x-3">
-                  <a href="#" class="text-white hover:text-blue-300 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <a
+                    href="#"
+                    class="text-white hover:text-blue-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                      />
                     </svg>
                   </a>
-                  <a href="#" class="text-white hover:text-blue-300 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <a
+                    href="#"
+                    class="text-white hover:text-blue-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
                     </svg>
                   </a>
-                  <a href="#" class="text-white hover:text-blue-300 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <a
+                    href="#"
+                    class="text-white hover:text-blue-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                      />
                     </svg>
                   </a>
                 </div>
@@ -958,45 +1422,77 @@
 
           <!-- Teacher 2 -->
           <div
-            class="teacher-card group relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300">
+            class="teacher-card group relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300"
+          >
             <div class="aspect-w-3 aspect-h-4 bg-gray-100 overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
                 alt="Ram Shankar"
-                class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
+                class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
             <div class="p-6">
               <div
-                class="absolute -top-[-0.3rem] font-poppins  right-4 bg-purple-600 text-white px-3 py-2 rounded-full text-sm font-medium shadow-md">
+                class="absolute -top-[-0.3rem] font-poppins right-4 bg-purple-600 text-white px-3 py-2 rounded-full text-sm font-medium shadow-md"
+              >
                 VP Designer
               </div>
-              <h3 class="text-2xl font-bold font-sora text-gray-900 mt-2">Ram Shankar</h3>
-              <p class="text-gray-600 font-poppins  mt-1">Interactive Learning Specialist</p>
+              <h3 class="text-2xl font-bold font-sora text-gray-900 mt-2">
+                Ram Shankar
+              </h3>
+              <p class="text-gray-600 font-poppins mt-1">
+                Interactive Learning Specialist
+              </p>
 
               <!-- Hidden Bio -->
               <div
-                class="teacher-bio absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p class="text-white font-poppins  text-sm mb-4">
+                class="teacher-bio absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <p class="text-white font-poppins text-sm mb-4">
                   Award-winning designer creating engaging educational
                   experiences for young learners since 2012.
                 </p>
                 <div class="flex space-x-3">
-                  <a href="#" class="text-white hover:text-purple-300 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <a
+                    href="#"
+                    class="text-white hover:text-purple-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                      />
                     </svg>
                   </a>
-                  <a href="#" class="text-white hover:text-purple-300 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <a
+                    href="#"
+                    class="text-white hover:text-purple-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
                     </svg>
                   </a>
-                  <a href="#" class="text-white hover:text-purple-300 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <a
+                    href="#"
+                    class="text-white hover:text-purple-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                      />
                     </svg>
                   </a>
                 </div>
@@ -1006,45 +1502,77 @@
 
           <!-- Teacher 3 -->
           <div
-            class="teacher-card group relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300">
+            class="teacher-card group relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300"
+          >
             <div class="aspect-w-3 aspect-h-4 bg-gray-100 overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
                 alt="Tripp Roki"
-                class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
+                class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
             <div class="p-6">
               <div
-                class="absolute -top-[-0.3rem] font-poppins  right-4 bg-green-600 text-white px-3 py-2 rounded-full text-sm font-medium shadow-md">
+                class="absolute -top-[-0.3rem] font-poppins right-4 bg-green-600 text-white px-3 py-2 rounded-full text-sm font-medium shadow-md"
+              >
                 Curriculum Design
               </div>
-              <h3 class="text-2xl font-sora font-bold text-gray-900 mt-2">Tripp Roki</h3>
-              <p class="text-gray-600 font-poppins  mt-1">STEAM Education Expert</p>
+              <h3 class="text-2xl font-sora font-bold text-gray-900 mt-2">
+                Tripp Roki
+              </h3>
+              <p class="text-gray-600 font-poppins mt-1">
+                STEAM Education Expert
+              </p>
 
               <!-- Hidden Bio -->
               <div
-                class="teacher-bio absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p class="text-white font-poppins  text-sm mb-4">
+                class="teacher-bio absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <p class="text-white font-poppins text-sm mb-4">
                   Combines science and creativity to make learning fun and
                   impactful for young minds.
                 </p>
                 <div class="flex space-x-3">
-                  <a href="#" class="text-white hover:text-green-300 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <a
+                    href="#"
+                    class="text-white hover:text-green-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                      />
                     </svg>
                   </a>
-                  <a href="#" class="text-white hover:text-green-300 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <a
+                    href="#"
+                    class="text-white hover:text-green-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
                     </svg>
                   </a>
-                  <a href="#" class="text-white hover:text-green-300 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <a
+                    href="#"
+                    class="text-white hover:text-green-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                      />
                     </svg>
                   </a>
                 </div>
@@ -1054,47 +1582,77 @@
 
           <!-- Teacher 4 -->
           <div
-            class="teacher-card group relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300">
+            class="teacher-card group relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300"
+          >
             <div class="aspect-w-3 aspect-h-4 bg-gray-100 overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
                 alt="Roberta Gspai"
-                class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
+                class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
             <div class="p-6">
               <div
-                class="absolute -top-[-0.3rem] font-poppins  right-4 bg-yellow-600 text-white px-3 py-2 rounded-full text-sm font-medium shadow-md">
+                class="absolute -top-[-0.3rem] font-poppins right-4 bg-yellow-600 text-white px-3 py-2 rounded-full text-sm font-medium shadow-md"
+              >
                 VP, Curriculum Design
               </div>
               <h3 class="text-2xl font-bold font-sora text-gray-900 mt-2">
                 Roberta Gspai
               </h3>
-              <p class="text-gray-600 font-poppins  mt-1">Language Development Specialist</p>
+              <p class="text-gray-600 font-poppins mt-1">
+                Language Development Specialist
+              </p>
 
               <!-- Hidden Bio -->
               <div
-                class="teacher-bio absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p class="text-white font-poppins  text-sm mb-4">
+                class="teacher-bio absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <p class="text-white font-poppins text-sm mb-4">
                   Multilingual educator developing innovative approaches to
                   early language acquisition.
                 </p>
                 <div class="flex space-x-3">
-                  <a href="#" class="text-white hover:text-yellow-300 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <a
+                    href="#"
+                    class="text-white hover:text-yellow-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                      />
                     </svg>
                   </a>
-                  <a href="#" class="text-white hover:text-yellow-300 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <a
+                    href="#"
+                    class="text-white hover:text-yellow-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
                     </svg>
                   </a>
-                  <a href="#" class="text-white hover:text-yellow-300 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <a
+                    href="#"
+                    class="text-white hover:text-yellow-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                      />
                     </svg>
                   </a>
                 </div>
@@ -1106,188 +1664,606 @@
         <!-- View All Button -->
         <div class="text-center mt-12">
           <button
-            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#ff5a73] hover:text-[#ff5a73] hover:border-[#ff5a73] hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all hover:scale-105">
+            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#ff5a73] hover:text-[#ff5a73] hover:border-[#ff5a73] hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all hover:scale-105"
+          >
             Meet All Our Teachers
-            <svg class="ml-3 -mr-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <svg
+              class="ml-3 -mr-1 h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
             </svg>
           </button>
         </div>
       </div>
     </section>
+    <!-- meet our teacher section two   -->
 
-<!-- Pricing Section - All Cards Visible -->
-<section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
-  <div class="max-w-7xl mx-auto">
-    <!-- Section Header -->
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-        Ready to Sign Up?
-      </h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        Choose the perfect plan for your family's learning journey
-      </p>
-    </div>
+    <section
+      id="wave-divider"
+      class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+    >
+      <!-- <div class="wave-divider"></div> -->
 
-    <!-- Pricing Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <!-- Monthly Plan -->
-      <div class="relative bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:border-[#ff5a73] transition-all duration-300 transform hover:-translate-y-2">
-        <div class="p-6 h-full flex flex-col">
-          <div class="absolute -top-3 right-4 bg-[#ff5a73] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
-            POPULAR
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-primary mb-4">
+          Meet Our Expert Team
+        </h2>
+        <div class="w-24 h-1 z-10 bg-secondary mx-auto mb-6 rounded-full"></div>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          Our learning experts are parents, teachers, designers, and makers with
+          backgrounds in early child development.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div
+          class="team-card bg-white rounded-2xl shadow-lg overflow-hidden relative"
+        >
+          <div
+            class="relative h-52 bg-gradient-to-br from-[#7b61ff] to-[#5d4ac9] flex items-center justify-center"
+          >
+            <div class="shape-1 w-36 h-36 bg-[#6a4eff] animate-float"></div>
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="Dr. Jody Levos"
+              class="absolute w-32 h-32 object-cover rounded-full border-4 border-white shadow-xl"
+            />
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-1">Monthly</h3>
-          <div class="flex items-end mb-6">
-            <span class="text-4xl font-extrabold text-gray-900">$9</span>
-            <span class="text-lg text-gray-500 ml-1">/mo</span>
+          <div class="card-content p-6 text-center relative z-10">
+            <h3 class="text-xl font-bold text-primary mt-2">Dr. Jody Levos</h3>
+            <p class="text-secondary text-sm font-medium mt-1">
+              VP, Curriculum Design
+            </p>
+            <p
+              class="text-gray-500 text-sm mt-3 hidden group-hover:block transition-all"
+            >
+              PhD in Child Psychology with 15+ years of experience in curriculum
+              development.
+            </p>
+
+            <div class="social-icons mt-4 flex justify-center space-x-4">
+              <a
+                href="#"
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
+              >
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+
+            <button
+              class="mt-6 bg-secondary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#6a4eff] transition-colors"
+            >
+              View Profile
+            </button>
           </div>
-          <ul class="space-y-3 mb-6 flex-grow">
-            <li class="flex items-start">
-              <svg class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-600">Limited access</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-600">Add up to 1 child profile</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-600">Basic learning materials</span>
-            </li>
-          </ul>
-          <button class="w-full px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#ff5a73] hover:bg-[#e04a63] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff5a73] transition-all duration-300 transform hover:scale-105">
-            Start Free Trial
-          </button>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="team-card bg-white rounded-2xl shadow-lg overflow-hidden relative"
+        >
+          <div
+            class="relative h-52 bg-gradient-to-br from-[#1e1c4f] to-[#0a0930] flex items-center justify-center"
+          >
+            <div
+              class="shape-2 w-36 h-36 bg-[#2a276b] animate-float"
+              style="animation-delay: 0.5s"
+            ></div>
+            <img
+              src="https://randomuser.me/api/portraits/men/44.jpg"
+              alt="Ram Shankar"
+              class="absolute w-32 h-32 object-cover rounded-full border-4 border-white shadow-xl"
+            />
+          </div>
+          <div class="card-content p-6 text-center relative z-10">
+            <h3 class="text-xl font-bold text-primary mt-2">Ram Shankar</h3>
+            <p class="text-[#1e1c4f] text-sm font-medium mt-1">VP Designer</p>
+            <p
+              class="text-gray-500 text-sm mt-3 hidden group-hover:block transition-all"
+            >
+              Award-winning designer focused on creating engaging educational
+              experiences.
+            </p>
+
+            <div class="social-icons mt-4 flex justify-center space-x-4">
+              <a
+                href="#"
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#1e1c4f] hover:bg-[#1e1c4f] hover:text-white transition-colors"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#1e1c4f] hover:bg-[#1e1c4f] hover:text-white transition-colors"
+              >
+                <i class="fab fa-dribbble"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#1e1c4f] hover:bg-[#1e1c4f] hover:text-white transition-colors"
+              >
+                <i class="fab fa-behance"></i>
+              </a>
+            </div>
+
+            <button
+              class="mt-6 bg-[#1e1c4f] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#0a0930] transition-colors"
+            >
+              View Profile
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="team-card bg-white rounded-2xl shadow-lg overflow-hidden relative"
+        >
+          <div
+            class="relative h-52 bg-gradient-to-br from-[#facc15] to-[#e6b400] flex items-center justify-center"
+          >
+            <div
+              class="shape-3 w-36 h-36 bg-[#f5c000] animate-float"
+              style="animation-delay: 1s"
+            ></div>
+            <img
+              src="https://randomuser.me/api/portraits/men/45.jpg"
+              alt="Tripp Roki"
+              class="absolute w-32 h-32 object-cover rounded-full border-4 border-white shadow-xl"
+            />
+          </div>
+          <div class="card-content p-6 text-center relative z-10">
+            <h3 class="text-xl font-bold text-primary mt-2">Tripp Roki</h3>
+            <p class="text-[#e6b400] text-sm font-medium mt-1">
+              Curriculum Design
+            </p>
+            <p
+              class="text-gray-500 text-sm mt-3 hidden group-hover:block transition-all"
+            >
+              Former teacher with a passion for creating accessible learning
+              materials.
+            </p>
+
+            <div class="social-icons mt-4 flex justify-center space-x-4">
+              <a
+                href="#"
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#e6b400] hover:bg-[#e6b400] hover:text-white transition-colors"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#e6b400] hover:bg-[#e6b400] hover:text-white transition-colors"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#e6b400] hover:bg-[#e6b400] hover:text-white transition-colors"
+              >
+                <i class="fas fa-book"></i>
+              </a>
+            </div>
+
+            <button
+              class="mt-6 bg-[#facc15] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#e6b400] transition-colors"
+            >
+              View Profile
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="team-card bg-white rounded-2xl shadow-lg overflow-hidden relative cursor-pointer"
+        >
+          <div
+            class="relative h-52 bg-gradient-to-br from-[#5eead4] to-[#2bc4ad] flex items-center justify-center"
+          >
+            <div
+              class="shape-4 w-36 h-36 bg-[#4ad7c1] animate-float"
+              style="animation-delay: 1.5s"
+            ></div>
+            <img
+              src="https://randomuser.me/api/portraits/men/50.jpg"
+              alt="Roberta Gspai"
+              class="absolute w-32 h-32 object-cover rounded-full border-4 border-white shadow-xl"
+            />
+          </div>
+          <div class="card-content p-6 text-center relative z-10">
+            <h3 class="text-xl font-bold text-primary mt-2">Roberta Gspai</h3>
+            <p class="text-[#2bc4ad] text-sm font-medium mt-1">
+              VP, Curriculum Design
+            </p>
+            <p
+              class="text-gray-500 text-sm mt-3 hidden group-hover:block transition-all"
+            >
+              Specialist in early childhood development with a focus on
+              play-based learning.
+            </p>
+
+            <div class="social-icons mt-4 flex justify-center space-x-4">
+              <a
+                href="#"
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#2bc4ad] hover:bg-[#2bc4ad] hover:text-white transition-colors"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#2bc4ad] hover:bg-[#2bc4ad] hover:text-white transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#2bc4ad] hover:bg-[#2bc4ad] hover:text-white transition-colors"
+              >
+                <i class="fas fa-globe"></i>
+              </a>
+            </div>
+
+            <button
+              class="mt-6 bg-[#5eead4] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#2bc4ad] transition-colors"
+            >
+              View Profile
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- Annual Plan -->
-      <div class="relative bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:border-[#ff5a73] transition-all duration-300 transform hover:-translate-y-2">
-        <div class="p-6 h-full flex flex-col">
-          <div class="absolute -top-3 right-4 bg-[#ff5a73] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
-            BEST VALUE
+      <div class="mt-16 text-center">
+        <button
+          class="px-8 py-3 bg-white text-gray-500 font-semibold rounded-full shadow-md hover:bg-gray-800 hover:text-white transition-colors border-2 border-gray-500"
+        >
+          View All Team Members
+        </button>
+      </div>
+    </section>
+
+    <!-- Pricing Section - All Cards Visible -->
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            Ready to Sign Up?
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Choose the perfect plan for your family's learning journey
+          </p>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Monthly Plan -->
+          <div
+            class="relative bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:border-[#ff5a73] transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="p-6 h-full flex flex-col">
+              <div
+                class="absolute -top-3 right-4 bg-[#ff5a73] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md"
+              >
+                POPULAR
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-1">Monthly</h3>
+              <div class="flex items-end mb-6">
+                <span class="text-4xl font-extrabold text-gray-900">$9</span>
+                <span class="text-lg text-gray-500 ml-1">/mo</span>
+              </div>
+              <ul class="space-y-3 mb-6 flex-grow">
+                <li class="flex items-start">
+                  <svg
+                    class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Limited access</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Add up to 1 child profile</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Basic learning materials</span>
+                </li>
+              </ul>
+              <button
+                class="w-full px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#ff5a73] hover:bg-[#e04a63] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff5a73] transition-all duration-300 transform hover:scale-105"
+              >
+                Start Free Trial
+              </button>
+            </div>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-1">Annual</h3>
-          <div class="flex items-end mb-6">
-            <span class="text-4xl font-extrabold text-gray-900">$49</span>
-            <span class="text-lg text-gray-500 ml-1">/yr</span>
+
+          <!-- Annual Plan -->
+          <div
+            class="relative bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:border-[#ff5a73] transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="p-6 h-full flex flex-col">
+              <div
+                class="absolute -top-3 right-4 bg-[#ff5a73] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md"
+              >
+                BEST VALUE
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-1">Annual</h3>
+              <div class="flex items-end mb-6">
+                <span class="text-4xl font-extrabold text-gray-900">$49</span>
+                <span class="text-lg text-gray-500 ml-1">/yr</span>
+              </div>
+              <div
+                class="mb-4 bg-[#ffebee] text-[#ff5a73] text-sm font-medium px-3 py-1 rounded-full inline-block"
+              >
+                Save 45%
+              </div>
+              <ul class="space-y-3 mb-6 flex-grow">
+                <li class="flex items-start">
+                  <svg
+                    class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Unlimited access</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Add up to 4 child profiles</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Premium learning materials</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >No commitment, cancel anytime</span
+                  >
+                </li>
+              </ul>
+              <button
+                class="w-full px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#ff5a73] hover:bg-[#e04a63] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff5a73] transition-all duration-300 transform hover:scale-105"
+              >
+                Start Free Trial
+              </button>
+            </div>
           </div>
-          <div class="mb-4 bg-[#ffebee] text-[#ff5a73] text-sm font-medium px-3 py-1 rounded-full inline-block">
-            Save 45%
+
+          <!-- 2 Years Plan -->
+          <div
+            class="relative bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:border-[#ff5a73] transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="p-6 h-full flex flex-col">
+              <div
+                class="absolute -top-3 right-4 bg-[#ff5a73] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md"
+              >
+                LONG TERM
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-1">2 Years</h3>
+              <div class="flex items-end mb-6">
+                <span class="text-4xl font-extrabold text-gray-900">$99</span>
+                <span class="text-lg text-gray-500 ml-1">/2 yrs</span>
+              </div>
+              <div
+                class="mb-4 bg-[#ffebee] text-[#ff5a73] text-sm font-medium px-3 py-1 rounded-full inline-block"
+              >
+                Save 55%
+              </div>
+              <ul class="space-y-3 mb-6 flex-grow">
+                <li class="flex items-start">
+                  <svg
+                    class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Unlimited access</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Add up to 4 child profiles</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Premium learning materials</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >No commitment, cancel anytime</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Exclusive content access</span>
+                </li>
+              </ul>
+              <button
+                class="w-full px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#ff5a73] hover:bg-[#e04a63] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff5a73] transition-all duration-300 transform hover:scale-105"
+              >
+                Start Free Trial
+              </button>
+            </div>
           </div>
-          <ul class="space-y-3 mb-6 flex-grow">
-            <li class="flex items-start">
-              <svg class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-600">Unlimited access</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-600">Add up to 4 child profiles</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-600">Premium learning materials</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-600">No commitment, cancel anytime</span>
-            </li>
-          </ul>
-          <button class="w-full px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#ff5a73] hover:bg-[#e04a63] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff5a73] transition-all duration-300 transform hover:scale-105">
-            Start Free Trial
-          </button>
+        </div>
+
+        <!-- FAQ/Note -->
+        <div
+          class="text-center mt-12 max-w-2xl mx-auto bg-[#ffebee] rounded-lg p-6 border border-[#ffcdd2]"
+        >
+          <p class="text-[#d32f2f]">
+            <span class="font-semibold">All plans include:</span> 14-day free
+            trial • Secure payment • 24/7 support
+          </p>
         </div>
       </div>
+    </section>
 
-      <!-- 2 Years Plan -->
-      <div class="relative bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:border-[#ff5a73] transition-all duration-300 transform hover:-translate-y-2">
-        <div class="p-6 h-full flex flex-col">
-          <div class="absolute -top-3 right-4 bg-[#ff5a73] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
-            LONG TERM
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-1">2 Years</h3>
-          <div class="flex items-end mb-6">
-            <span class="text-4xl font-extrabold text-gray-900">$99</span>
-            <span class="text-lg text-gray-500 ml-1">/2 yrs</span>
-          </div>
-          <div class="mb-4 bg-[#ffebee] text-[#ff5a73] text-sm font-medium px-3 py-1 rounded-full inline-block">
-            Save 55%
-          </div>
-          <ul class="space-y-3 mb-6 flex-grow">
-            <li class="flex items-start">
-              <svg class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-600">Unlimited access</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-600">Add up to 4 child profiles</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-600">Premium learning materials</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-600">No commitment, cancel anytime</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-5 w-5 text-[#ff5a73] mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-600">Exclusive content access</span>
-            </li>
-          </ul>
-          <button class="w-full px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#ff5a73] hover:bg-[#e04a63] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff5a73] transition-all duration-300 transform hover:scale-105">
-            Start Free Trial
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- FAQ/Note -->
-    <div class="text-center mt-12 max-w-2xl mx-auto bg-[#ffebee] rounded-lg p-6 border border-[#ffcdd2]">
-      <p class="text-[#d32f2f]">
-        <span class="font-semibold">All plans include:</span> 14-day free trial • Secure payment • 24/7 support
-      </p>
-    </div>
-  </div>
-</section>
-
-    <!--  -->
-    <!-- Trusted Section -->
     <!-- Trusted By Section -->
     <section class="w-full">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
         <!-- Left Column: Dark Info -->
-        <div class=" px-6 py-16 sm:px-10 lg:px-16 flex flex-col justify-center">
+        <div class="px-6 py-16 sm:px-10 lg:px-16 flex flex-col justify-center">
           <h2 class="text-3xl md:text-4xl font-extrabold text-[#1e1c4f] mb-10">
             Trusted by parents<br />worldwide
           </h2>
-          <p class="text-lg text-slate-600 mb-10">Specially designed for the modern young learner, ​ we combine our
-            authentic teaching expertise with technology to deliver. </p>
+          <p class="text-lg text-slate-600 mb-10">
+            Specially designed for the modern young learner, we combine our
+            authentic teaching expertise with technology to deliver.
+          </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <!-- 1 -->
@@ -1314,28 +2290,44 @@
         </div>
 
         <!-- Right Column: Logos Grid -->
-        <div class="grid grid-cols-2 divide-x divide-y divide-dashed gap-2 divide-gray-100 text-center ">
+        <div
+          class="grid grid-cols-2 divide-x divide-y divide-dashed divide-gray-100"
+        >
           <!-- Fast Company -->
-          <div class="flex items-center justify-center h-40   bg-[#f8f5f0] ">
-            <img src="image/image 93.png" alt="Fast Company" class="h-10 w-20 object-contain" />
+          <div class="flex items-center justify-center p-6 bg-[#f8f5f0]">
+            <img
+              src="image/image 93.png"
+              alt="Fast Company"
+              class="max-h-12 max-w-[120px] w-auto h-auto object-contain"
+            />
           </div>
           <!-- NHSA -->
-          <div class="flex items-center justify-center h-40  bg-[#ffffff]">
-            <img src="image/image 94.png" alt="NHSA" class="h-8 w-20 object-contain" />
+          <div class="flex items-center justify-center p-6 bg-white">
+            <img
+              src="image/image 94.png"
+              alt="NHSA"
+              class="max-h-10 max-w-[120px] w-auto h-auto object-contain"
+            />
           </div>
           <!-- Forbes -->
-          <div class="flex items-center justify-center h-40  bg-[#ffffff]">
-            <img src="image/image 97.jpg" alt="Forbes" class="h-10 w-20 object-contain" />
+          <div class="flex items-center justify-center p-6 bg-white">
+            <img
+              src="image/image 97.jpg"
+              alt="Forbes"
+              class="max-h-12 max-w-[120px] w-auto h-auto object-contain"
+            />
           </div>
           <!-- Super Simple -->
-          <div class="flex items-center justify-center h-40  bg-[#f8f5f0]">
-            <img src="image/image 98.png" alt="Super Simple" class="h-10 w-20 object-contain" />
+          <div class="flex items-center justify-center p-6 bg-[#f8f5f0]">
+            <img
+              src="image/image 98.png"
+              alt="Super Simple"
+              class="max-h-12 max-w-[120px] w-auto h-auto object-contain"
+            />
           </div>
         </div>
       </div>
     </section>
-
-
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 px-4 sm:px-6 lg:px-8">
@@ -1345,7 +2337,9 @@
           <!-- Logo Column -->
           <div class="col-span-2 md:col-span-1">
             <div class="flex items-center space-x-2 mb-6">
-              <div class="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center">
+              <div
+                class="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center"
+              >
                 <span class="text-white font-bold text-lg">U</span>
               </div>
               <h2 class="text-2xl font-bold text-white">Unitten</h2>
@@ -1354,28 +2348,44 @@
               Empowering young minds through innovative learning experiences.
             </p>
             <div class="flex space-x-4">
-              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path
-                    d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                    d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"
+                  />
                 </svg>
               </a>
-              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
                 </svg>
               </a>
-              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path
-                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
                 </svg>
               </a>
-              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path
-                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                  />
                 </svg>
               </a>
             </div>
@@ -1383,11 +2393,22 @@
 
           <!-- Footer Links - Accordion on Mobile -->
           <div class="footer-col">
-            <button class="footer-col-toggle md:hidden flex items-center justify-between w-full py-3 text-left">
+            <button
+              class="footer-col-toggle md:hidden flex items-center justify-between w-full py-3 text-left"
+            >
               <h3 class="text-lg font-semibold text-white">Guided Lessons</h3>
-              <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200" fill="none"
-                stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <svg
+                class="w-5 h-5 text-gray-400 transform transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </button>
             <h3 class="hidden md:block text-lg font-semibold text-white mb-4">
@@ -1395,23 +2416,46 @@
             </h3>
             <ul class="footer-col-content hidden md:block space-y-3">
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Progress Tracker</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Progress Tracker</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Classroom Mode</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Classroom Mode</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Skills Progression</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Skills Progression</a
+                >
               </li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <button class="footer-col-toggle md:hidden flex items-center justify-between w-full py-3 text-left">
+            <button
+              class="footer-col-toggle md:hidden flex items-center justify-between w-full py-3 text-left"
+            >
               <h3 class="text-lg font-semibold text-white">About Us</h3>
-              <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200" fill="none"
-                stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <svg
+                class="w-5 h-5 text-gray-400 transform transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </button>
             <h3 class="hidden md:block text-lg font-semibold text-white mb-4">
@@ -1419,29 +2463,60 @@
             </h3>
             <ul class="footer-col-content hidden md:block space-y-3">
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Company</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Company</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Reviews</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Reviews</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Blog</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Press</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Press</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">GteriMapUs</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >GteriMapUs</a
+                >
               </li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <button class="footer-col-toggle md:hidden flex items-center justify-between w-full py-3 text-left">
+            <button
+              class="footer-col-toggle md:hidden flex items-center justify-between w-full py-3 text-left"
+            >
               <h3 class="text-lg font-semibold text-white">Learning Library</h3>
-              <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200" fill="none"
-                stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <svg
+                class="w-5 h-5 text-gray-400 transform transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </button>
             <h3 class="hidden md:block text-lg font-semibold text-white mb-4">
@@ -1449,32 +2524,67 @@
             </h3>
             <ul class="footer-col-content hidden md:block space-y-3">
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Worksheets</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Worksheets</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Games</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Games</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Workbooks</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Workbooks</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Activities</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Activities</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Stories</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Stories</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Exercises</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Exercises</a
+                >
               </li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <button class="footer-col-toggle md:hidden flex items-center justify-between w-full py-3 text-left">
+            <button
+              class="footer-col-toggle md:hidden flex items-center justify-between w-full py-3 text-left"
+            >
               <h3 class="text-lg font-semibold text-white">Support</h3>
-              <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200" fill="none"
-                stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <svg
+                class="w-5 h-5 text-gray-400 transform transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </button>
             <h3 class="hidden md:block text-lg font-semibold text-white mb-4">
@@ -1482,22 +2592,46 @@
             </h3>
             <ul class="footer-col-content hidden md:block space-y-3">
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Pricing</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Pricing</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Give Gift</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Give Gift</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Redeem Gift</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Redeem Gift</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">FAQs</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >FAQs</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Terms of Service</a
+                >
               </li>
             </ul>
           </div>
@@ -1514,9 +2648,21 @@
             </p>
           </div>
           <div class="flex space-x-6">
-            <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-            <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-            <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookies</a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white text-sm transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white text-sm transition-colors"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white text-sm transition-colors"
+              >Cookies</a
+            >
           </div>
         </div>
 
@@ -1529,5 +2675,4 @@
 
     <script src="main.js"></script>
   </body>
-
 </html>
